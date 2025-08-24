@@ -1,0 +1,43 @@
+{
+  "intervalMinutes": 1440,
+  "username": "cscigliano39@gmail.com",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "a[data-test=\"header-login-btn\"]",
+  "login": {
+    "buttonSelector": "a[data-test=\"header-login-btn\"]",
+    "usernameSelector": "input[data-testid=\"base-input\"]",
+    "passwordSelector": "input#password[data-test=\"password\"]",
+    "submitSelector": "button[data-test=\"login-now-btn\"]"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "button[data-test=\"common-header-buy-button\"]",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "button.styles_root__FH7J8",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "button[data-test=\"open-daily-reward-button\"]",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "div[data-test=\"daily-reward-modal-claim\"]",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

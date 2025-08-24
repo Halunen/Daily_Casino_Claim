@@ -1,0 +1,35 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "QKvV2jXJqxL1FXiWWtVD",
+  "loginRequiredSelector": "button.a-button.secondary.size-md[data-tid=\"header-login-btn\"]",
+  "login": {
+    "buttonSelector": "button.a-button.secondary.size-md[data-tid=\"header-login-btn\"]",
+    "usernameSelector": "input.input.email-input[data-tid=\"login-email-input\"]",
+    "passwordSelector": "input.password-input[data-tid=\"login-password-input\"]",
+    "submitSelector": "button.a-button.primary.size-lg.button[data-tid=\"login-btn\"]"
+  },
+  "tasks": [
+    {
+      "selector": "a.navigation-item.is-badge[href=\"/promotions/\"]",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "button.a-button.primary.size-md.btn[data-v-685a18aa][data-v-cb912922]",
+      "textMatch": "Claim Reward",
+      "clickType": "click",
+      "delay": 2000
+    },
+    {
+      "selector": "button.a-button.primary.size-lg.wide[data-v-685a18aa][data-v-dba52e2b]",
+      "textMatch": "Collect",
+      "clickType": "click",
+      "delay": 2000
+    },
+    {
+      "selector": "body",
+      "delay": 8000
+    }
+  ]
+}

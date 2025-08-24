@@ -1,0 +1,30 @@
+{
+  "intervalMinutes": 1440,
+  "username": "",
+  "password": "",
+  "loginRequiredSelector": "GRAGAS",
+  "login": {
+    "buttonSelector": "",
+    "usernameSelector": "",
+    "passwordSelector": "",
+    "submitSelector": ""
+  },
+  "tasks": [
+    {
+      "selector": "button[data-testid='wallet']",
+      "delay": 3000
+    },
+    {
+      "selector": "button[data-testid='dailyBonus']",
+      "delay": 3000
+    },
+    {
+      "selector": "button[data-testid='password-reset-button']",
+      "delay": 3000
+    },
+    {
+      "selector": "body",
+      "delay": 8000
+    }
+  ]
+}

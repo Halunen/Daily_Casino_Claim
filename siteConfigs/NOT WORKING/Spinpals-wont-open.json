@@ -1,0 +1,43 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "Bf1aHalPBFypOXxhLqwf",
+  "loginRequiredSelector": "#root button.text-base.font-bold.capitalize.border-white.rounded-full.cursor-pointer",
+  "login": {
+    "buttonSelector": "#root button.text-base.font-bold.capitalize.border-white.rounded-full.cursor-pointer",
+    "usernameSelector": "input[type='text'][name='email'].mt-1.text-white.block.w-full.rounded-\\[40px\\].max-w-elementwidth.py-2.px-4.h-\\[46px\\].bg-blueViolet-400.placeholder\\:text-white.focus-visible\\:border.focus-visible\\:border-solid.focus-visible\\:border-vibrantYellow-500.focus-visible\\:outline-none.focus\\:placeholder\\:opacity-0.transition.ease-linear",
+    "passwordSelector": "input#cpd_password[name='password'].mt-1.text-white.block.w-full.rounded-\\[40px\\].max-w-elementwidth.py-2.px-4.h-\\[46px\\].bg-blueViolet-400.placeholder\\:text-white.focus-visible\\:border.focus-visible\\:border-solid.focus-visible\\:border-vibrantYellow-500.focus-visible\\:outline-none.focus\\:placeholder\\:opacity-0.transition.ease-linear",
+    "submitSelector": "button.text-base.max-sm\\:text-\\[13px\\].leading-none.font-bold.px-3.py-2\\.5.rounded-full.border-vibrantYellow-500.border-solid.border-\\[2px\\].relative.inline-block.text-black.hover\\:text-white.transition-all.duration-500.ease-in-out.bg-vibrantYellow-500.overflow-hidden.group.cursor-pointer.z-\\[1\\].text-center.hover\\:bg-transparent.max-md\\:text-sm.max-md\\:px-4.max-md\\:py-2.max-sm\\:py-0\\.5.max-sm\\:px-3.bg-copper-500.\\!py-2.\\!px-12.\\!leading-tight.\\!rounded-full.\\!text-base.\\!font-bold.text-black.capitalizes"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "#root > div.app-container > div > div > div > div.min-h-screen > div.fixed.z-50.h-dvh.top-0.transition-all.duration-300.ease-in-out.max-xl\\:-left-full > div.relative.z-40.w-\\[260px\\].max-x\\:w-full.bg-deepPurple-800.p-3.pt-6.max-xl\\:pt-11.transition-all.duration-300.ease-in-out.max-xl\\:-left-full.top-0.h-dvh > div.h-\\[calc\\(100dvh_-_146px\\)\\].max-xl\\:h-\\[calc\\(100dvh_-_200px\\)\\].overflow-y-auto > div.mt-5 > div > a:nth-child(3)",
+      "clickType": "click",
+      "delay": 10000
+    },
+	{
+      "selector": "div[data-index='2'] a.text-vibrantYellow-500.font-bold.capitalize",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "button.text-base.max-sm\\:text-\\[13px\\].leading-none.font-bold.px-3.py-2\\.5.rounded-full.border-vibrantYellow-500.border-solid.border-\\[2px\\].relative.inline-block.text-black.hover\\:text-white.transition-all.duration-500.ease-in-out.bg-vibrantYellow-500.overflow-hidden.group.cursor-pointer.z-\\[1\\].text-center.hover\\:bg-transparent.max-md\\:text-sm.max-md\\:px-4.max-md\\:py-2.max-sm\\:py-0\\.5.max-sm\\:px-3.\\!py-2.\\!px-8.\\!leading-tight.\\!rounded-full.\\!text-base.\\!font-bold.capitalizes",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "div#pixi-spin-wheel > canvas",
+      "clickType": "canvasCenter",
+      "delay": 10000
+    },
+	{
+      "selector": "body",
+      "delay": 15000
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "intervalMinutes": 1440,
+  "username": "cscigliano39@gmail.com",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "GRAGAS",
+  "login": {
+    "buttonSelector": "button._greenButton_vqpcb_4",
+    "usernameSelector": "",
+    "passwordSelector": "",
+    "submitSelector": ""
+  },
+  
+  "tasks": [
+	{
+      "selector": "#_gameContainer_rvu5z_89",		   
+      "clickType": "clickMiddle",
+      "delay": 10000
+    },
+	{
+      "selector": "body",
+      "delay": 10000
+    }
+  ]
+}

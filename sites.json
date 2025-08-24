@@ -1,0 +1,222 @@
+[
+  {
+    "url": "https://jackpotrabbit.com",
+    "config": "jackpotrabbit.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://wildworldcasino.com/",
+    "config": "wildworldcasino.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://stake.us",
+    "config": "stakeus.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://clubscasino.com",
+    "config": "clubscasino.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.pulszbingo.com",
+    "config": "pulzbingo.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://luckyhands.com",
+    "config": "luckyhands.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://spinblitz.com",
+    "config": "spinblitz.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://playfame.com/login",
+    "config": "playfame.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://app.icasino.com",
+    "config": "icasino.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://moozi.com/",
+    "config": "Moozi.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://luckyhands.com/",
+    "config": "Luckyhands.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://luckybird.io/",
+    "config": "Luckybird.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://myprize.us/",
+    "config": "Myprize.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://spinquest.com/casino/lobby",
+    "config": "Spinquest.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.zitobox.com/",
+    "config": "Zitobox.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://wap.acornfun.com/#/dashboard/welcome",
+    "config": "Acornfun.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.vivaro.us/en-us/",
+    "config": "Vivaro.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://punt.com/?page=bonus&tab=bank",
+    "config": "Punt.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.stackrcasino.com/lobby",
+    "config": "Stackrwheel.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.theboss.casino/",
+    "config": "Bosscasino.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://smilescasino.com/lobby",
+    "config": "Smilescasino.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://globalpoker.com/",
+    "config": "Globalpoker.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://fortunewheelz.com/",
+    "config": "Fortunewheelzdaily.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://luckylandslots.com/",
+    "config": "luckylandslots.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://scrooge.casino/en/",
+    "config": "Scroogecasino.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.spinpals.com/lobby",
+    "config": "Spinpals.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.megabonanza.com/",
+    "config": "Megabonanza.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.hellomillions.com/",
+    "config": "Hellomillions.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.playfame.com/lobby",
+    "config": "Playfame.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.spinblitz.com/",
+    "config": "Spinblitz.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://babacasino.com/",
+    "config": "Babacasino.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://modo.us/lobby",
+    "config": "Modo.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://casino.click/",
+    "config": "Casinoclick.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://spree.com/slots",
+    "config": "Spree.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.legendz.com/en-US/",
+    "config": "Legendz.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://lonestarcasino.com/",
+    "config": "Lonestar.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://speedsweeps.com/",
+    "config": "Speedsweeps.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://sweepnext.com/",
+    "config": "Sweepnext.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://toratoracasino.com/",
+    "config": "Toratora.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://lobby.luckybitsvegas.com/",
+    "config": "Luckybits.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://game.sorceryreels.com/lobby",
+    "config": "Sorceryreels.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://sweeps.high5casino.com/",
+    "config": "High5.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://luckystake.com/",
+    "config": "Luckystake.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://www.zulacasino.com/",
+    "config": "zulacasino.json",
+    "intervalMinutes": 1440
+  }
+]

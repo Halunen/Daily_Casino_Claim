@@ -1,0 +1,33 @@
+{
+  "intervalMinutes": 1440,
+  "username": "cscigliano39@gmail.com",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "button.HeaderStyle_loginbtn__8o7qd",
+  "login": {
+    "buttonSelector": "button.HeaderStyle_loginbtn__8o7qd",
+    "usernameSelector": "input[name='username'][placeholder='Username']",
+    "passwordSelector": "input[type='password'][name='password'][placeholder='Password']",
+    "submitSelector": "button.bg-button-bg.font-lexend"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "#__next > div.group\\/sidebar-wrapper.flex.min-h-svh.w-full.has-\\[\\[data-variant\\=inset\\]\\]\\:bg-sidebar > div > div.duration-200.fixed.inset-y-0.z-10.hidden.h-svh.transition-\\[left\\,right\\,width\\].ease-linear.md\\:flex.left-0.group-data-\\[collapsible\\=offcanvas\\]\\:left-\\[calc\\(var\\(--sidebar-width\\)\\*-1\\)\\].group-data-\\[collapsible\\=icon\\]\\:w-\\[--sidebar-width-icon\\].group-data-\\[side\\=left\\]\\:border-0.group-data-\\[side\\=right\\]\\:border-0.bg-\\[rgb\\(var\\(--header\\)\\)\\].top-\\[89px\\].w-\\[270px\\].space-y-\\[20px\\].border-r-2.border-solid.border-\\[rgb\\(var\\(--header-border\\)\\)\\] > div > div > div.flex.min-h-0.flex-1.flex-col.gap-2.overflow-auto.group-data-\\[collapsible\\=icon\\]\\:overflow-hidden.max-w-\\[268px\\].mx-auto > div:nth-child(3) > li > button",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "canvas[width='1000'][height='1000']",
+      "clickType": "canvasCenter",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 15000
+    }
+  ]
+}

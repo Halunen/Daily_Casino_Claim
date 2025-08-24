@@ -1,0 +1,37 @@
+{
+  "intervalMinutes": 360,
+  "username": "casinunen@gmail.com",
+  "password": "bUtEI@#GK23zVKaf",
+  "loginRequiredSelector": "button.btn.btn-login[type='button']",
+  "login": {
+    "buttonSelector": "button.btn.btn-login[type='button']",
+    "usernameSelector": "input#email[formcontrolname='email']",
+    "passwordSelector": "input#password[formcontrolname='password']",
+    "submitSelector": "button.btn.btn-primary[type='submit']"
+  },
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 5000
+    },
+	{
+      "selector": "button.btn.btn-primary",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "label#daily-bonus-tab.tab",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "button.btn.btn-red",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

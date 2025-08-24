@@ -1,0 +1,43 @@
+{
+  "intervalMinutes": 1440,
+  "username": "cscigliano39@gmail.com",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "a.mt-button-base-root.mt-button-outlined.styles_root__rijy_.styles_loginLink__QnUXk[data-test='header-login-btn'][href='/login']",
+  "login": {
+    "buttonSelector": "a.mt-button-base-root.mt-button-outlined.styles_root__rijy_.styles_loginLink__QnUXk[data-test='header-login-btn'][href='/login']",
+    "usernameSelector": "input[placeholder='Email Address'][name='email'][aria-required='true']",
+    "passwordSelector": "input#password[name='password'][data-test='password'][placeholder='Password'][aria-required='true']",
+    "submitSelector": "button.mt-button-base-root.mt-button-contained.styles_root__YiphY.styles_button__Yty4N[data-test='login-now-btn'][type='submit'][role='button']"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "button[data-test='common-header-buy-button']",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "span.styles_tag__NY2rS > img.styles_arrowIcon__uKmTm[alt='https://storage.googleapis.com/www.megabonanza.com/megabonanza-images/icons/arrow-right.svg']",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "button[data-testid=\"button-base\"][data-disabled=\"false\"]",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "button.mt-button-base-root.mt-button-contained.styles_root__YiphY.Dialog_button__6D7ub[role='button']",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

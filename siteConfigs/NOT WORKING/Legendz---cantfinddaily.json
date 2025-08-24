@@ -1,0 +1,38 @@
+{
+  "intervalMinutes": 1440,
+  "username": "cscigliano39@gmail.com",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "button.css-n1yf0g.e1cnah1t0",
+  "login": {
+    "buttonSelector": "button.css-n1yf0g.e1cnah1t0",
+    "usernameSelector": "input[data-testid='login-email.input-field']",
+    "passwordSelector": "input[data-testid='login-password.input-field']",
+    "submitSelector": "div.css-110ogq5.e2vs66t0 > button.css-ph7ilm.e1cnah1t0"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "a[aria-label='Main menu'][href='/en-US/casino/discover?menu=me']",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "div.css-ocuku9.e2vs66t0 > button.css-ph7ilm.e1cnah1t0",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "#Layer_1-spin > g:nth-child(4) > circle.interactive",
+      "clickType": "simulate",
+      "delay": 10000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

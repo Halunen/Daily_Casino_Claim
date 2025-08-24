@@ -1,0 +1,33 @@
+{
+  "intervalMinutes": 1440,
+  "username": "cscigliano39@gmail.com",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "button.login.cta.login-btn",
+  "login": {
+    "buttonSelector": "button.login.cta.login-btn",
+    "usernameSelector": "input#extId",
+    "passwordSelector": "input#extPassword",
+    "submitSelector": "div#signInEmail > div.signInButtonPopup.submitButtonPopup"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+	{
+      "selector": "button.sweeps-claim-center-button.sweeps-top-bar-button",
+      "clickType": "click",
+      "delay": 10000
+    },
+    {
+      "selector": "div.sweeps-claim-center-section-claim",
+      "clickType": "click",
+      "delay": 10000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

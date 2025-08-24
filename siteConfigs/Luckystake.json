@@ -1,0 +1,48 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "qIURC2eyfX9pYe31ajzz",
+  "loginRequiredSelector": "button.WizButton_base__ojkNL.WizButton_primary-outlined__gu335.WizButton_L__UZfj4",
+  "login": {
+    "buttonSelector": "button.WizButton_base__ojkNL.WizButton_primary-outlined__gu335.WizButton_L__UZfj4",
+    "usernameSelector": "input#email[name='email']",
+    "passwordSelector": "input#password[name='password']",
+    "submitSelector": "button.WizButton_base__ojkNL.WizButton_primary-contained__xOImR.WizButton_L__UZfj4.WizButton_WizFullWidth__DvHSM[type='submit']"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "button.WizButton_base__ojkNL.WizButton_primary-contained__xOImR.WizButton_S__HmTVp.WizButton_WizFullWidth__DvHSM",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "button.WizButton_base__ojkNL.WizButton_primary-outlined__gu335.WizButton_S__HmTVp.WizButton_icon-end__ZZdzx",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "button.WizButton_base__ojkNL.WizButton_shop-contained__HW1Cm.WizButton_L__UZfj4.WizButton_WizFullWidth__DvHSM",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "button.WizButton_base__ojkNL.WizButton_shop-contained__HW1Cm.WizButton_L__UZfj4.WizButton_WizFullWidth__DvHSM",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body > div.WizPopupWrapper_background__QKYey.undefined > div > div > div.WizPopupBody_wrapper__5pKBD.WizPopupBody_innerMaxHeight__xSbNf > div > div > div > div.RewardsContainer_container_rewardsWrapper__FyajK > div.WizDailyRewardCard_container_card__UlEqM.WizDailyRewardCard_container_card_isReadyToClaim__YziD1 > button",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

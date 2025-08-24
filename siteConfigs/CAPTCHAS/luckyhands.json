@@ -1,0 +1,26 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "GeyRfCJRBKmpOFr$22",
+  "loginRequiredSelector": "button:has(div.MuiBox-root.css-11viufx)",
+  "login": {
+    "buttonSelector": "button:has(div.MuiBox-root.css-11viufx)",
+    "usernameSelector": "input[name='username']",
+    "passwordSelector": "input[name='password']",
+    "submitSelector": "button[type='submit']"
+  },
+  "tasks": [
+    {
+      "selector": "div.b2-sb.MuiBox-root.css-su6you",
+      "delay": 2000
+    },
+    {
+      "selector": "button.btn.btn-s-25.btn-h-46",
+      "delay": 1000
+    },
+    {
+      "selector": "body",
+      "delay": 8000
+    }
+  ]
+}

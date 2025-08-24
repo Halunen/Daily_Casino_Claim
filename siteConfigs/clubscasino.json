@@ -1,0 +1,31 @@
+{
+  "intervalMinutes": 1440,
+  "username": "",
+  "password": "",
+  "loginRequiredSelector": "dfsdfsd",
+  "login": {
+    "buttonSelector": "",
+    "usernameSelector": "",
+    "passwordSelector": "",
+    "submitSelector": ""
+  },
+  "tasks": [
+    {
+      "selector": "body",
+      "delay": 10000
+    },
+    {
+      "selector": "button",
+      "textMatch": "Get Coins",
+      "delay": 0
+    },
+    {
+      "selector": "body",
+      "delay": 5000
+    },
+    {
+      "selector": ".daily-bonuses__item-collect",
+      "delay": 0
+    }
+  ]
+}

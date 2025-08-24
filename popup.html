@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Runner</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 15px;
+      width: 320px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h2, h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      font-size: 0.9rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .section {
+      margin-bottom: 15px;
+    }
+
+    #status, #debugLog {
+      font-size: 0.85rem;
+      background: #fff;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <h2>🎯 Task Runner</h2>
+
+  <div class="section">
+    <label for="siteSelector">Run a Site:</label>
+    <select id="siteSelector"></select>
+    <button id="runSelected">▶ Run Selected Site</button>
+    <button id="testLogger">🧪 Test Log Entry</button>
+  </div>
+
+  <div class="section">
+    <button id="toggleAuto">⏳ Loading...</button>
+  </div>
+
+  <div class="section">
+    <h3>Status</h3>
+    <div id="status">Loading...</div>
+  </div>
+
+  <div class="section">
+    <button id="downloadLog">📥 Download Log</button>
+    <button id="resetTimestamps">♻ Reset Timestamps</button>
+  </div>
+
+  <div class="section">
+    <h3>Debug Log</h3>
+    <div id="debugLog">(no logs)</div>
+    <button id="clearDebugLog">🧹 Clear Debug Log</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

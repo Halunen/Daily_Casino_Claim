@@ -1,0 +1,35 @@
+{
+  "intervalMinutes": 720,
+  "username": "cscigliano39@gmail.com",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "div.header-quick-link-wrap a.MuiLink-root.MuiLink-underlineAlways",
+  "login": {
+    "buttonSelector": "div.header-quick-link-wrap a.MuiLink-root.MuiLink-underlineAlways",
+    "usernameSelector": "input#outlined-basic[name='email']",
+    "passwordSelector": "input#cpd_password[name='password'][type='password']",
+    "submitSelector": "button.MuiButton-containedPrimary.btn-gradient[type='submit']"
+  },
+  
+  "tasks": [
+
+	{
+      "selector": "svg.MuiSvgIcon-root[data-testid='CloseIcon']",
+      "clickType": "simulate-parent-svg",
+      "delay": 5000
+    },
+	{
+      "selector": "a.MuiLink-root.MuiLink-underlineAlways > img[alt='Promotions']",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "button.MuiButton-containedPrimary.border-btn[type='button']",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 15000
+    }
+  ]
+}

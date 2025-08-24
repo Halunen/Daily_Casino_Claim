@@ -1,0 +1,33 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "E9EAOQ#$TQCcg1HUXY1z",
+  "loginRequiredSelector": "GRAGAS",
+  "login": {
+    "buttonSelector": "GRAGAS",
+    "usernameSelector": "input#formBasicEmail[name='email'][type='email']",
+    "passwordSelector": "input#formBasicPassword[name='password'][type='password']",
+    "submitSelector": "button.formBtn.btn.btn-primary[type='submit']"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": ".MainPage button.btn.btn-primary",
+      "clickType": "click",
+      "delay": 10000
+    },
+	{
+      "selector": "button.claim-btn.btn.btn-primary",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

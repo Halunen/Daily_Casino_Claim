@@ -1,0 +1,32 @@
+{
+  "intervalMinutes": 1440,
+  "username": "cscigliano39@gmail.com",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "",
+  "login": {
+    "buttonSelector": "",
+    "usernameSelector": "",
+    "passwordSelector": "",
+    "submitSelector": ""
+  },
+  "tasks": [
+    {
+      "selector": "body",
+      "delay": 10000
+    },
+    {
+      "selector": "",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "body",
+      "delay": 8000
+    }
+  ]
+}

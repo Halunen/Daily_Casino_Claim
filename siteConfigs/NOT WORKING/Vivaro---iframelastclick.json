@@ -1,0 +1,33 @@
+{
+  "intervalMinutes": 1440,
+  "username": "cscigliano39",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "button.Button-buttonParentStyles.Button-mediumButton.Button-secondaryType[data-testid=\"sign_in_button\"] > div.Button-buttonInnerStyles[data-testid=\"text-content\"]",
+  "login": {
+    "buttonSelector": "button.Button-buttonParentStyles.Button-mediumButton.Button-secondaryType[data-testid=\"sign_in_button\"] > div.Button-buttonInnerStyles[data-testid=\"text-content\"]",
+    "usernameSelector": "input#username[name=\"username\"][type=\"text\"][data-testid=\"username-input\"]",
+    "passwordSelector": "input#password[name=\"password\"][type=\"password\"][data-testid=\"password-input\"]",
+    "submitSelector": "button.joinButton.Button-buttonParentStyles.Button-normalButton.Button-primaryType[type=\"submit\"][data-testid=\"verify_button\"]"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 10000
+    },
+	{
+      "selector": "a.Navigation-navItemStyles.Navigation-navItemStyles-d11[href='/en-us/frame/daily-bonus'] .name",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": ".spin-btn-holder > button",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 15000
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "ASDA2bug76$!@!",
+  "loginRequiredSelector": "a[href='/login']:not([hidden])",
+  "login": {
+    "buttonSelector": "a[href='/login']:not([hidden])",
+    "usernameSelector": "input[name='email'].form-control",
+    "passwordSelector": "input[name='password'].form-control",
+    "submitSelector": "button.login_btn.gradiant.btn.btn-primary"
+  },
+  "tasks": [
+    {
+      "selector": "button.swal2-confirm.swal2-styled[aria-label='Claim Bonus!']",
+      "clickType": "click",
+      "delay": 10000
+    },
+    {
+      "selector": "body",
+      "delay": 8000
+    }
+  ]
+}

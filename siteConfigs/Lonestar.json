@@ -1,0 +1,28 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "Ul3l46MuV9lSYXbn27Rs",
+  "loginRequiredSelector": "li > div.menulogin3",
+  "login": {
+    "buttonSelector": "li > div.menulogin3",
+    "usernameSelector": "input#poplogin_email",
+    "passwordSelector": "input#poplogin_password",
+    "submitSelector": "button#poploginbtn"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "div.greenbtn#claimnewpop",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

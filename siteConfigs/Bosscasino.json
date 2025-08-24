@@ -1,0 +1,33 @@
+{
+  "intervalMinutes": 1440,
+  "username": "cscigliano39@gmail.com",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "#root > div.app-container > div > div > div > div.MuiGrid-root.jss1.css-rfnosa > div.MuiGrid-root.jss10.css-rfnosa > div > div.MuiGrid-root.auth-btn-wrap.css-rfnosa > button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.jss13.css-r4j8of > div",
+  "login": {
+    "buttonSelector": "#root > div.app-container > div > div > div > div.MuiGrid-root.jss1.css-rfnosa > div.MuiGrid-root.jss10.css-rfnosa > div > div.MuiGrid-root.auth-btn-wrap.css-rfnosa > button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.jss13.css-r4j8of > div",
+    "usernameSelector": "input#outlined-basic[name='email'][placeholder='Email Address']",
+    "passwordSelector": "input#cpd_password[name='password'][placeholder='Password']",
+    "submitSelector": "button[type='submit'].MuiButtonBase-root.MuiButton-contained"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "button.secondary-btn[type='button'] > p.MuiTypography-root",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "canvas[width='1000'][height='1000']",
+      "clickType": "canvasCenter",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 15000
+    }
+  ]
+}

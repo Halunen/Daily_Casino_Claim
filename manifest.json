@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Daily_Casino_Claim",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "controller.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "sites.json",
+        "auth.js",
+        "runner.js",
+        "taskRelay.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "auth.js",
+        "runner.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

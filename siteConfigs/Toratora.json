@@ -1,0 +1,28 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "4X7rgp2BZaxEo94BqMgV",
+  "loginRequiredSelector": "button.px-3.py-2.text-sm.font-medium.text-white.hover\\:text-primary.transition-colors",
+  "login": {
+    "buttonSelector": "button.px-3.py-2.text-sm.font-medium.text-white.hover\\:text-primary.transition-colors",
+    "usernameSelector": "input[type=\"email\"]",
+    "passwordSelector": "input[type=\"password\"]",
+    "submitSelector": "button[type=\"submit\"]"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "div.relative.w-full.h-40.bg-gradient-to-br.from-black\\/40.to-black\\/60.rounded-2xl.border-2.border-primary\\/30.overflow-hidden.cursor-pointer.hover\\:border-primary\\/50",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 15000
+    }
+  ]
+}

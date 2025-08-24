@@ -1,0 +1,39 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "uuOaGeWE6xrGpAbjxD1p",
+  "loginRequiredSelector": "gragas",
+  "login": {
+    "buttonSelector": "button.a-button.secondary.size-md.login-btn",
+    "usernameSelector": "input.input.email-input",
+    "passwordSelector": "input.input.password-input",
+    "submitSelector": "div.buttons button.a-button.primary.size-lg"
+  },
+  "tasks": [
+    {
+      "selector": "body",
+      "delay": 10000
+    },
+    {
+      "selector": "svg path[d*='M10.0303 8.96965']",
+      "delay": 1000
+    },
+    {
+      "selector": ".icon-button.ghost.menu-btn",
+      "delay": 1000
+    },
+    {
+      "selector": "button.a-button.default.nav-button.daily",
+      "delay": 4000
+    },
+    {
+      "selector": "button.a-button.primary.size-lg.btn > span.fs.medium.capitalize",
+      "clickType": "click",
+      "delay": 3000
+    },
+    {
+      "selector": "body",
+      "delay": 8000
+    }
+  ]
+}

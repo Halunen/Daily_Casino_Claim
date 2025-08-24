@@ -1,0 +1,33 @@
+{
+  "intervalMinutes": 240,
+  "username": "cscigliano39@gmail.com",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "#header > div.onscreen > div.flex.items-center.justify-end.w-max.gap-2.md\\:px-2.xl\\:px-4.flex-1 > div.flex.items-center.gap-2 > div.btn.btn-sm.hover__mode.\\!bg-info.\\!text-neutral-contrast",
+  "login": {
+    "buttonSelector": "#header > div.onscreen > div.flex.items-center.justify-end.w-max.gap-2.md\\:px-2.xl\\:px-4.flex-1 > div.flex.items-center.gap-2 > div.btn.btn-sm.hover__mode.\\!bg-info.\\!text-neutral-contrast",
+    "usernameSelector": "input[name='email'][placeholder='Enter your email']",
+    "passwordSelector": "input[type='password'][name='password'][placeholder='Enter password']",
+    "submitSelector": "button.btn.btn-primary.w-full.\\!mt-0"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 10000
+    },
+    {
+      "selector": "div.header__link.header__link-single > a.sub__link > span.header__title",
+      "clickType": "click",
+      "delay": 20000
+    },
+	{
+      "selector": "span.badge.bg-primary.border-none.w-full.h-auto > span.text-xs.md\\:text-sm.text-white",
+      "clickType": "click",
+      "delay": 10000
+    },
+	{
+      "selector": "body",
+      "delay": 10000
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "intervalMinutes": 1440,
+  "username": "",
+  "password": "",
+  "loginRequiredSelector": "sdasdas",
+  "login": {
+    "buttonSelector": "",
+    "usernameSelector": "",
+    "passwordSelector": "",
+    "submitSelector": ""
+  },
+  "tasks": [
+    {
+      "selector": "body",
+      "delay": 8000
+    },
+    {
+      "selector": "canvas#wow-main-canvas",
+      "clickType": "canvasCenter",
+      "delay": 8000
+    }
+  ]
+}

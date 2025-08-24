@@ -1,0 +1,54 @@
+{
+  "intervalMinutes": 720,
+  "username": "casinunen@gmail.com",
+  "password": "ZunXFT1cw1wE!t",
+  "loginRequiredSelector": "div.header-quick-link-wrap a.MuiLink-root.MuiLink-underlineAlways",
+  "login": {
+    "buttonSelector": "div.header-quick-link-wrap a.MuiLink-root.MuiLink-underlineAlways",
+    "usernameSelector": "input#outlined-basic[name='email']",
+    "passwordSelector": "input#cpd_password[name='password'][type='password']",
+    "submitSelector": "button.MuiButton-containedPrimary.btn-gradient[type='submit']"
+  },
+  
+  "tasks": [
+	{
+      "selector": "svg.MuiSvgIcon-root[data-testid='CloseIcon']",
+      "clickType": "simulate-parent-svg",
+      "delay": 5000
+    },
+    {
+      "selector": "a.spin-wheel-menu",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "canvas",
+      "clickType": "canvasCenter",
+      "delay": 10000
+    },
+	{
+      "selector": "button.btn-gradient.css-nlsym0",
+      "clickType": "click",
+      "delay": 30000
+    },
+	{
+      "selector": "button.btn-gradient.css-nlsym0",
+      "clickType": "click",
+      "delay": 10000
+    },
+	{
+      "selector": "button[aria-label='close']",
+      "clickType": "click",
+      "delay": 10000
+    },
+	{
+      "selector": "canvas",
+      "clickType": "canvasCenter",
+      "delay": 10000
+    },
+	{
+      "selector": "body",
+      "delay": 15000
+    }
+  ]
+}

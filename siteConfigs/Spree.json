@@ -1,0 +1,28 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "Ws5Igo5PrWu4!",
+  "loginRequiredSelector": "button[data-cy='login-btn']",
+  "login": {
+    "buttonSelector": "button[data-cy='login-btn']",
+    "usernameSelector": "input[data-cy='login-form-email-input']",
+    "passwordSelector": "input[data-cy='login-form-password-input']",
+    "submitSelector": "button[data-cy='login-form-submit-button']"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "button[data-cy='claim-bonus-button']",
+      "clickType": "click",
+      "delay": 10000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

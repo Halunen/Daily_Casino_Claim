@@ -1,0 +1,28 @@
+{
+  "intervalMinutes": 1440,
+  "username": "cscigliano39@gmail.com",
+  "password": "Rainforest813!",
+  "loginRequiredSelector": "button.button.log-in",
+  "login": {
+    "buttonSelector": "button.button.log-in",
+    "usernameSelector": "input[type='email'][formcontrolname='email'][placeholder='eMail']",
+    "passwordSelector": "input[type='password'][formcontrolname='password'][placeholder='Password']",
+    "submitSelector": "div.pink-btn > span"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "button.submit-bonus",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

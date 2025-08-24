@@ -1,0 +1,34 @@
+{
+  "intervalMinutes": 1440,
+  "username": "",
+  "password": "",
+  "loginRequiredSelector": "GRAGAS",
+  "login": {
+    "buttonSelector": "div#tab-login",
+    "usernameSelector": "input.el-input__inner[placeholder=\"Username\"]",
+    "passwordSelector": "input.el-input__inner[placeholder=\"Password\"]",
+    "submitSelector": "span"
+  },
+  "tasks": [
+    {
+      "selector": "body",
+      "delay": 10000
+    },
+    {
+      "selector": "p.button_primary > span",
+      "delay": 4000
+    },
+    {
+      "selector": "body > section > div.commonAlert_wrap > div.commonAlert_main > div.buyRedeem_wrap.tw-flex.tw-justify-center.tw-flex-col > div.tw-flex.tw-flex-col.tw-px-4 > div > div > div > div:nth-child(5)",
+      "delay": 5000
+    },
+    {
+      "selector": "body > section > div.commonAlert_wrap > div.commonAlert_main > div.buyRedeem_wrap.tw-flex.tw-justify-center.tw-flex-col > div:nth-child(2) > div > div.tw-flex > button:nth-child(1)",
+      "delay": 3000
+    },
+    {
+      "selector": "body",
+      "delay": 3000
+    }
+  ]
+}

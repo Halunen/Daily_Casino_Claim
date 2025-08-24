@@ -1,0 +1,38 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "Fg:'B0M8^fj8+!iCSL",
+  "loginRequiredSelector": "button[data-testid='border-button-login'].Buttons_borderButton__q8Usv > p",
+  "login": {
+    "buttonSelector": "button[data-testid='border-button-login'].Buttons_borderButton__q8Usv > p",
+    "usernameSelector": "input[type='text'][name='email'][placeholder='Email Address']",
+    "passwordSelector": "input[type='password'][name='password'][placeholder='Enter password']",
+    "submitSelector": "button.Buttons_yellowBorderButton__Oz8Zk[type='submit'] > p"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "button[data-testid='get-coin-button'].Buttons_getCoinButton__tI_JS.header__get-coin > span.Buttons_btnLabel__ee0ZM > p",
+      "clickType": "click",
+      "delay": 15000
+    },
+	{
+      "selector": "#layout > div.overlay.dialog-overlay > div.dialog-wrapper.dialog-wrapper--animated > div > div.dialog__body > div > div.tab__header > div:nth-child(2) > button",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "button.Buttons_yellowButton__Xik0K[type='submit'] > p",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

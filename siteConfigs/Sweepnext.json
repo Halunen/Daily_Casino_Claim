@@ -1,0 +1,38 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "mb0XEU41scTzIhHtI084",
+  "loginRequiredSelector": "#__next > div.Layout_container__3jbvY > header > div.header_navbar__OvyoB > div > button.WizButton_base__ojkNL.WizButton_primary-outlined__gu335.WizButton_L__UZfj4 > span.WizButton_text__oCBg0",
+  "login": {
+    "buttonSelector": "#__next > div.Layout_container__3jbvY > header > div.header_navbar__OvyoB > div > button.WizButton_base__ojkNL.WizButton_primary-outlined__gu335.WizButton_L__UZfj4 > span.WizButton_text__oCBg0",
+    "usernameSelector": "input#email[name='email'][type='text']",
+    "passwordSelector": "input#password[name='password'][type='password']",
+    "submitSelector": "button.WizButton_base__ojkNL.WizButton_primary-contained__xOImR.WizButton_L__UZfj4.WizButton_WizFullWidth__DvHSM[type='submit']"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 25000
+    },
+    {
+      "selector": "#__next > div.Layout_container__3jbvY > header > div.header_burger__82yTJ > div > div.Burger_button__JUnAx",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "div.SpeenWheel_banner__bAF0H",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "div.wheel-spin-button.active",
+      "clickType": "click",
+      "delay": 10000
+    },
+	{
+      "selector": "body",
+      "delay": 15000
+    }
+  ]
+}

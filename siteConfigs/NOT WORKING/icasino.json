@@ -1,0 +1,13 @@
+{
+  "intervalMinutes": 1440,
+  "username": "YOUR_EMAIL@example.com",
+  "password": "YOUR_PASSWORD_HERE",
+  "loginRequiredSelector": "a.casino-button.cta-button.animate__backInRight[href*=\"/sign-in\"]",
+  "login": {
+    "buttonSelector": "a.casino-button.cta-button.animate__backInRight[href*=\"/sign-in\"]",
+    "usernameSelector": "input.input-outlined[data-testid=\"email-form-email-input\"]",
+    "passwordSelector": "input.input-outlined.pr-11[data-testid=\"email-form-password-input\"]",
+    "submitSelector": "div.relative.w-full > span.z-10"
+  },
+  "tasks": []
+}

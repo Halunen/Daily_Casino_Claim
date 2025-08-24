@@ -1,0 +1,33 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "qMyOtXwmz3kctf6zmYIq",
+  "loginRequiredSelector": "button.inline-flex.items-center.justify-center.gap-2.whitespace-nowrap.rounded-md.ring-offset-background.focus-visible\\:outline-none.focus-visible\\:ring-2.focus-visible\\:ring-ring.focus-visible\\:ring-offset-2.disabled\\:pointer-events-none.disabled\\:opacity-50.\\[\\&_svg\\]\\:pointer-events-none.\\[\\&_svg\\]\\:size-4.\\[\\&_svg\\]\\:shrink-0.transition-colors.duration-300.ease-in-out.text-\\[16px\\].font-bold.border-\\[2px\\].border-blue-100.bg-transparent.text-neutral-50.md\\:hover\\:bg-blue-100.active\\:bg-blue-200.active\\:border-blue-200.h-\\[48px\\].px-6.w-fit.mb-0",
+  "login": {
+    "buttonSelector": "button.inline-flex.items-center.justify-center.gap-2.whitespace-nowrap.rounded-md.ring-offset-background.focus-visible\\:outline-none.focus-visible\\:ring-2.focus-visible\\:ring-ring.focus-visible\\:ring-offset-2.disabled\\:pointer-events-none.disabled\\:opacity-50.\\[\\&_svg\\]\\:pointer-events-none.\\[\\&_svg\\]\\:size-4.\\[\\&_svg\\]\\:shrink-0.transition-colors.duration-300.ease-in-out.text-\\[16px\\].font-bold.border-\\[2px\\].border-blue-100.bg-transparent.text-neutral-50.md\\:hover\\:bg-blue-100.active\\:bg-blue-200.active\\:border-blue-200.h-\\[48px\\].px-6.w-fit.mb-0",
+    "usernameSelector": "body > div.fixed.inset-0.z-40.flex.items-center.justify-center.backdrop-blur > dialog > div > form > div.relative.w-full.mb-1.styles_input__tRYIB > input",
+    "passwordSelector": "body > div.fixed.inset-0.z-40.flex.items-center.justify-center.backdrop-blur > dialog > div > form > div.relative.w-full.mb-2.styles_input__tRYIB > input",
+    "submitSelector": "body > div.fixed.inset-0.z-40.flex.items-center.justify-center.backdrop-blur > dialog > div > form > button"
+  },
+  
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 15000
+    },
+    {
+      "selector": "body > div.flex.h-screen.flex-col > div.flex.h-full.flex-1.overflow-hidden > div.hidden.lg\\:block > div > div:nth-child(1) > div:nth-child(7) > div",
+      "clickType": "click",
+      "delay": 10000
+    },
+	{
+      "selector": "button.inline-flex.w-full.items-center.justify-center.gap-2.whitespace-nowrap.rounded-md.ring-offset-background.focus-visible\\:outline-none.focus-visible\\:ring-2.focus-visible\\:ring-ring.focus-visible\\:ring-offset-2.disabled\\:pointer-events-none.disabled\\:opacity-50.\\[\\&_svg\\]\\:pointer-events-none.\\[\\&_svg\\]\\:size-4.\\[\\&_svg\\]\\:shrink-0.transition-colors.duration-300.ease-in-out.text-\\[16px\\].font-arvo.font-bold.border-\\[2px\\].border-neutral-50.bg-green-200.text-neutral-50.md\\:hover\\:text-green-200.md\\:hover\\:border-neutral-50.md\\:hover\\:bg-neutral-50.active\\:bg-neutral-50.active\\:border-neutral-50.disabled\\:bg-neutral-100.disabled\\:border-neutral-100.h-\\[48px\\].px-6.mb-0",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "intervalMinutes": 1440,
+  "username": "YOUR_EMAIL@example.com",
+  "password": "YOUR_PASSWORD_HERE",
+  "loginRequiredSelector": "sdfsdfsdf",
+  "login": {
+    "buttonSelector": "",
+    "usernameSelector": "",
+    "passwordSelector": "",
+    "submitSelector": ""
+  },
+  "tasks": [
+    {
+      "selector": "a.styles_button__wZ6Rg.styles_body-3__SsHZC.styles_brand-1__yqkgM[href*=\"/login?platform=globalpoker.com\"]",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "input#1-email.auth0-lock-input[name=\"email\"]",
+      "action": "fill",
+      "value": "casinunen@gmail.com",
+      "delay": 2000
+    },
+    {
+      "selector": "input#1-password.auth0-lock-input[name=\"password\"]",
+      "action": "fill",
+      "value": "1FFa2xuweRlvgBJGGp7C",
+      "delay": 1000
+    },
+    {
+      "selector": "button#1-submit.auth0-lock-submit[name=\"submit\"]",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "#cashier-button",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "#daily-bonus-1",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "#daily-bonus-2",
+      "clickType": "click",
+      "delay": 3000
+    },
+    {
+      "selector": "#daily-bonus-3",
+      "clickType": "click",
+      "delay": 3000
+    },
+    {
+      "selector": "#daily-bonus-4",
+      "clickType": "click",
+      "delay": 3000
+    },
+    {
+      "selector": "#daily-bonus-5",
+      "clickType": "click",
+      "delay": 3000
+    },
+    {
+      "selector": "#daily-bonus-6",
+      "clickType": "click",
+      "delay": 3000
+    },
+    {
+      "selector": "#daily-bonus-7",
+      "clickType": "click",
+      "delay": 3000
+    },
+    {
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}
