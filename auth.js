@@ -3,7 +3,7 @@
 
   const config = window._siteConfig || window.siteConfig;
   if (!config || !config.login) {
-    console.warn("❌ No login config found");
+    chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "⚠️ No login config found" });
     window.loginCompleted = true;
     return;
   }
@@ -80,7 +80,7 @@
       const sitekey = new URL(iframe.src).searchParams.get("k");
       const pageUrl = window.location.href;
 
-      console.log("🔍 CAPTCHA sitekey found:", sitekey);
+      chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "🔍 CAPTCHA detected" });
 
       const taskPayload = {
         clientKey: ANTICAPTCHA_KEY,
@@ -102,7 +102,7 @@
       if (!taskJson.taskId) throw new Error(`createTask failed: ${taskJson.errorCode}`);
 
       const taskId = taskJson.taskId;
-      console.log("📝 CAPTCHA task created:", taskId);
+      chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: `📝 CAPTCHA task created (${taskId})` });
 
       let token = null;
       for (let i = 0; i < 50; i++) {
@@ -131,13 +131,11 @@
       ["input","change","blur"].forEach(type => textarea.dispatchEvent(new Event(type, { bubbles: true })));
       textarea.dispatchEvent(new Event("DOMSubtreeModified", { bubbles: true }));
 
-      console.log("✅ CAPTCHA token injected & events dispatched");
+      chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "✅ CAPTCHA solved & injected" });
 
       // ▶️ Delay before callback and submit
       await delay(3000);
-      console.log("⏳ Waited 3 seconds, now invoking callback and submit");
 
-      const resumeToken = textarea.value;
       let resumeFound = null;
       if (window.___grecaptcha_cfg?.clients) {
         Object.values(window.___grecaptcha_cfg.clients).forEach(client => {
@@ -149,22 +147,22 @@
         });
       }
       if (typeof resumeFound === "function") {
-        resumeFound(resumeToken);
-        console.log("✅ Callback executed after delay.");
+        resumeFound(textarea.value);
+        chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "✅ CAPTCHA callback executed" });
       } else {
-        console.warn("❌ No callback found after delay.");
+        chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "❌ No CAPTCHA callback found" });
       }
 
       const submitBtn = document.querySelector(submitSelector) || document.querySelector("button[type='submit']");
       if (submitBtn) {
         simulateClick(submitBtn);
-        console.log("🚀 Submit clicked after delay.");
+        chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "🚀 Submit clicked after CAPTCHA" });
       } else {
-        console.warn("⚠️ Submit button not found after delay.");
+        chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "⚠️ Submit button not found after CAPTCHA" });
       }
 
     } catch (err) {
-      console.error("❌ CAPTCHA solve error:", err.message || err);
+      chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: `❌ CAPTCHA solve error: ${err.message}` });
     }
   }
 
@@ -173,7 +171,7 @@
       const trigger = document.querySelector(buttonSelector);
       if (trigger) {
         simulateClick(trigger);
-        console.log(`🟡 Clicked login trigger: ${buttonSelector}`);
+        chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: `🟡 Clicked login trigger: ${buttonSelector}` });
         await delay(1000);
       }
     }
@@ -186,27 +184,29 @@
     await delay(300);
     simulateReactInput(passwordEl, config.password || "");
     await delay(300);
-    console.log("✏️ Credentials filled and simulated");
+    chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "✏️ Credentials filled" });
 
     await solveCaptchaIfNeeded();
 
     if (submitEl && !submitEl.disabled) {
       simulateClick(submitEl);
-      console.log("🚀 Login button clicked");
+      chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "🚀 Login button clicked" });
     } else {
       const form = submitEl?.closest("form");
       if (form) {
         form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-        console.log("📤 Manual form submit dispatched");
+        chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "📤 Form submitted manually" });
       } else {
-        console.error("❌ No form found to submit.");
+        chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "❌ No form found to submit" });
       }
     }
 
     window.loginCompleted = true;
+    chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: "✅ Login process finished" });
 
   } catch (err) {
     console.error("❌ Login script failed:", err);
+    chrome.runtime.sendMessage({ command: "LOG_STEP", url: location.origin, message: `❌ Login script error: ${err.message}` });
     window.loginCompleted = false;
   }
 })();

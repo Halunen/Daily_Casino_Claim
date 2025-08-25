@@ -21,6 +21,7 @@
     {
       "resources": [
         "sites.json",
+        "siteConfigs/*.json",
         "auth.js",
         "runner.js",
         "taskRelay.js"

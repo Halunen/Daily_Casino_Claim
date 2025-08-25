@@ -3,13 +3,14 @@ let sites = [];
 function updateAutoStatusDot(enabled) {
   const dot = document.getElementById("autoStatusDot");
   if (!dot) return;
-  dot.style.width = "12px";
-  dot.style.height = "12px";
-  dot.style.borderRadius = "50%";
-  dot.style.display = "inline-block";
-  dot.style.marginLeft = "8px";
   dot.style.backgroundColor = enabled ? "green" : "red";
   dot.title = enabled ? "Auto Mode is ACTIVE" : "Auto Mode is OFF";
+}
+
+function formatLogLine(line) {
+  if (line.includes("✅")) return `<span class="log-success">${line}</span>`;
+  if (line.includes("❌")) return `<span class="log-error">${line}</span>`;
+  return line;
 }
 
 function loadSites() {
@@ -36,10 +37,10 @@ function loadSites() {
         statusDiv.innerHTML = data.map(site => {
           const last = stored[site.url] || 0;
           const minsAgo = last ? ((now - last) / 60000).toFixed(1) : "Never";
-          const lastFormatted = last ? new Date(last).toLocaleString() : "Never";
+          const lastFormatted = last ? new Date(last).toLocaleTimeString() : "Never";
 
           const logKey = `${new URL(site.url).origin}_lastLog`;
-          const log = stored[logKey] || "(no log)";
+          const log = stored[logKey] || "";
 
           const interval = site.intervalMinutes || 1440;
           const nextRun = last + interval * 60 * 1000;
@@ -47,26 +48,44 @@ function loadSites() {
           const due = timeUntilNext <= 0;
           const nextRunDisplay = due
             ? "<span style='color:red'>Now</span>"
-            : `in ${Math.ceil(timeUntilNext / 60000)} min`;
+            : `${Math.ceil(timeUntilNext / 60000)}m`;
+
+          // Logs: only show box if logs exist
+          let logHtml = "";
+          if (log) {
+            const formattedLog = log
+              .split("\n")
+              .map(l => `<div>${formatLogLine(l)}</div>`)
+              .join("");
+            logHtml = `<div class="site-log">${formattedLog}</div>`;
+          } else {
+            logHtml = `<div class="site-nolog">(no log)</div>`;
+          }
 
           return `
             <div class="site-status">
-              <strong>${site.url}</strong><br>
-              Last completed: ${minsAgo} min ago<br>
-              Last run time: ${lastFormatted}<br>
-              Next run: ${nextRunDisplay}<br>
-              <pre style="background:#eee;padding:5px;border-radius:4px;overflow-x:auto;">${log}</pre>
+              <div class="site-header">
+                🌐 ${new URL(site.url).hostname}
+                <span class="site-meta">
+                  ⏱ ${minsAgo} | 🕒 ${lastFormatted} | ▶ Next: ${nextRunDisplay}
+                </span>
+              </div>
+              ${logHtml}
             </div>
           `;
         }).join("");
       });
 
-      // Load debug log
+      // Debug log
       chrome.storage.local.get("debugLog", (data) => {
         const log = data.debugLog || [];
         const debugDiv = document.getElementById("debugLog");
         if (debugDiv) {
-          debugDiv.innerHTML = log.slice().reverse().map(line => `<div>${line}</div>`).join("");
+          debugDiv.innerHTML = log
+            .slice()
+            .reverse()
+            .map(line => `<div>${formatLogLine(line)}</div>`)
+            .join("");
         }
       });
     })
@@ -137,7 +156,6 @@ document.getElementById("clearDebugLog").addEventListener("click", () => {
   });
 });
 
-// ✅ Fix: Log to the currently selected site
 document.getElementById("testLogger").addEventListener("click", () => {
   const selector = document.getElementById("siteSelector");
   const selectedUrl = selector.options[selector.selectedIndex]?.value;

@@ -57,7 +57,7 @@
       overflow-y: auto;
     }
 
-    /* Style for Auto Mode status dot */
+    /* Auto Mode status dot */
     #autoStatusContainer {
       display: flex;
       align-items: center;
@@ -71,6 +71,52 @@
       margin-left: 10px;
       background-color: red; /* default OFF */
     }
+
+    /* Compact site info */
+    .site-status {
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #eee; /* subtle divider */
+    }
+    .site-header {
+      font-weight: bold;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .site-meta {
+      font-size: 0.75rem;
+      color: #555;
+      font-weight: normal;
+      margin-left: 8px;
+    }
+
+    /* Logs */
+    .site-log {
+      margin-left: 16px;  /* indent under site header */
+      margin-top: 2px;
+      padding: 4px;
+      border-radius: 4px;
+      background: #fdfdfd;
+      border: 1px solid #eee;
+      max-height: 100px;
+      overflow-y: auto;
+      font-size: 0.75rem;
+    }
+    .site-log div { padding: 1px 0; }
+
+    .site-nolog {
+      font-size: 0.7rem;
+      color: #999;
+      font-style: italic;
+      margin-left: 16px;  /* indent to match logs */
+      margin-top: 2px;
+    }
+
+    /* Highlighted log lines */
+    .log-success { color: green; font-weight: bold; }
+    .log-error { color: red; font-weight: bold; }
   </style>
 </head>
 <body>

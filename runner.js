@@ -1,41 +1,58 @@
 (async function taskRunner() {
   console.log("🛠️ Task runner injected");
 
+  function logStep(msg) {
+    chrome.runtime.sendMessage({
+      command: "LOG_STEP",
+      url: location.origin,
+      message: msg
+    });
+  }
+
   const delay = ms => new Promise(r => setTimeout(r, ms));
 
   function simulateClick(el) {
+    if (!el) {
+      logStep("❌ simulateClick called with null element");
+      return;
+    }
     el.scrollIntoView({ block: 'center', inline: 'center' });
     const overlay = document.querySelector('.page-overlay');
     if (overlay) overlay.style.pointerEvents = 'none';
-    ['pointerover','pointermove','pointerdown','pointerup','pointerout'].forEach(type =>
-      el.dispatchEvent(new PointerEvent(type, { bubbles: true, cancelable: true, composed: true }))
-    );
-    ['mouseover','mousemove','mousedown','mouseup','click'].forEach(type =>
-      el.dispatchEvent(new MouseEvent(type, { bubbles: true, cancelable: true, composed: true }))
-    );
+
+    ['pointerover','pointermove','pointerdown','pointerup','pointerout']
+      .forEach(type => el.dispatchEvent(new PointerEvent(type, { bubbles: true, cancelable: true, composed: true })));
+
+    ['mouseover','mousemove','mousedown','mouseup','click']
+      .forEach(type => el.dispatchEvent(new MouseEvent(type, { bubbles: true, cancelable: true, composed: true })));
+
+    logStep("✅ Simulated click executed");
   }
 
-  // 1) Wait for login if configured
+  // --- 1) Wait for login if configured ---
   const hasLoginConfig = !!(window._siteConfig?.login || window.siteConfig?.login);
   if (hasLoginConfig) {
     const loginSel = window._siteConfig?.loginRequiredSelector || window.siteConfig?.loginRequiredSelector;
-    console.log("🔒 Waiting for loginCompleted…");
+    logStep("🔒 Waiting for loginCompleted…");
     if (loginSel && !document.querySelector(loginSel)) {
-      console.log("ℹ️ loginRequiredSelector not found → skipping login wait");
+      logStep("ℹ️ loginRequiredSelector not found → skipping login wait");
       window.loginCompleted = true;
     }
     await new Promise(resolve => {
       if (window.loginCompleted) return resolve();
       const iv = setInterval(() => {
-        if (window.loginCompleted) { clearInterval(iv); resolve(); }
+        if (window.loginCompleted) {
+          clearInterval(iv);
+          resolve();
+        }
       }, 200);
     });
-    console.log("✅ Detected loginCompleted, now running tasks");
+    logStep("✅ Detected loginCompleted, now running tasks");
   } else {
-    console.log("ℹ️ No login config → skipping straight to tasks");
+    logStep("ℹ️ No login config → skipping straight to tasks");
   }
 
-  // 2) Load config
+  // --- 2) Load config ---
   let siteConfig = window._siteConfig || window.siteConfig;
   if (!siteConfig) {
     try {
@@ -47,19 +64,29 @@
         location.pathname.startsWith(new URL(s.url).pathname)
       );
       if (!match) throw new Error("No matching site entry");
-      siteConfig = typeof match.config === 'string'
-        ? await (await fetch(chrome.runtime.getURL(match.config))).json()
+
+      siteConfig = typeof match.config === "string"
+        ? await (await fetch(chrome.runtime.getURL("siteConfigs/" + match.config))).json()
         : match.config;
+
+      logStep("✅ Loaded site config via fallback");
     } catch (e) {
-      console.error("❌ Failed to load config:", e);
+      logStep(`❌ Failed to load config: ${e.message}`);
       return;
     }
   }
 
-  // 3) Run tasks
+  if (!siteConfig) {
+    logStep("❌ siteConfig is null/undefined after load");
+    return;
+  }
+
+  logStep(`📦 Runner received siteConfig with ${siteConfig.tasks?.length || 0} tasks`);
+
+  // --- 3) Run tasks ---
   const tasks = siteConfig.tasks || [];
   if (!tasks.length) {
-    console.warn("⚠️ No tasks defined for this site.");
+    logStep("⚠️ No tasks defined for this site");
     return;
   }
 
@@ -71,16 +98,15 @@
     } = task;
 
     if (runIfSelector && !document.querySelector(runIfSelector)) {
-      console.log(`🔷 Skipping task #${i + 1}: "${selector}" (missing runIfSelector)`);
+      logStep(`🔷 Skipping task #${i + 1}: missing runIfSelector`);
       continue;
     }
     if (runIfNotSelector && document.querySelector(runIfNotSelector)) {
-      console.log(`🔷 Skipping task #${i + 1}: "${selector}" (present runIfNotSelector)`);
+      logStep(`🔷 Skipping task #${i + 1}: runIfNotSelector present`);
       continue;
     }
 
-    console.group(`🔍 Task #${i + 1}: selector="${selector}" clickType="${clickType || 'default'}" textMatch="${textMatch || ''}"`);
-    console.time(`⏱️ Task #${i + 1} total`);
+    logStep(`🔍 Task #${i + 1} started (selector="${selector}", clickType="${clickType || 'default'}")`);
 
     try {
       const el = await new Promise((resolve, reject) => {
@@ -99,73 +125,70 @@
         })();
       });
 
-      console.log('   - Element found:', el);
-      console.log(`   - Attempting clickType='${clickType || 'default'}'`);
+      logStep(`✅ Task #${i + 1}: element found`);
 
       try {
         switch (clickType) {
-          case 'simulate':
+          case "simulate":
             simulateClick(el);
             break;
-          case 'simulate-parent-svg': {
-            const svgParent = el.closest('svg, svg *');
+          case "simulate-parent-svg": {
+            const svgParent = el.closest("svg, svg *");
             if (svgParent) simulateClick(svgParent);
+            else logStep("❌ No SVG parent found for simulate-parent-svg");
             break;
           }
-          case 'form-submit':
-            el.closest('form')?.submit();
+          case "form-submit":
+            el.closest("form")?.submit();
+            logStep("✅ Form submitted");
             break;
-          case 'keyboard':
+          case "keyboard":
             el.focus();
-            el.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true, composed: true }));
-            el.dispatchEvent(new KeyboardEvent('keyup', { key: 'Enter', bubbles: true, composed: true }));
+            el.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true, composed: true }));
+            el.dispatchEvent(new KeyboardEvent("keyup", { key: "Enter", bubbles: true, composed: true }));
+            logStep("✅ Enter key simulated");
             break;
-          case 'canvasCenter': {
+          case "canvasCenter": {
             const rect = el.getBoundingClientRect();
             const x = rect.left + rect.width / 2;
             const y = rect.top + rect.height / 2;
-            const opts = { view: window, bubbles: true, cancelable: true, clientX: x, clientY: y, pointerType: 'mouse' };
-            console.log(`🎯 canvasCenter dispatch at ${x},${y}`);
-            el.dispatchEvent(new PointerEvent('pointerdown', opts));
-            el.dispatchEvent(new PointerEvent('pointerup', opts));
-            el.dispatchEvent(new MouseEvent('click', opts));
+            const opts = { view: window, bubbles: true, cancelable: true, clientX: x, clientY: y, pointerType: "mouse" };
+            el.dispatchEvent(new PointerEvent("pointerdown", opts));
+            el.dispatchEvent(new PointerEvent("pointerup", opts));
+            el.dispatchEvent(new MouseEvent("click", opts));
+            logStep(`✅ canvasCenter click at ${x},${y}`);
             break;
           }
           default:
             el.click();
+            logStep("✅ Default click executed");
         }
-        console.log('   ✅ Click succeeded');
       } catch (clickErr) {
-        console.error('   ❌ Click failed:', clickErr);
+        logStep(`❌ Task #${i + 1} click failed: ${clickErr.message}`);
       }
 
       if (taskDelay > 0) {
-        console.log(`   - Waiting ${taskDelay}ms before next task`);
+        logStep(`⏳ Waiting ${taskDelay}ms before next task`);
         await delay(taskDelay);
       }
 
-      console.timeEnd(`⏱️ Task #${i + 1} total`);
+      logStep(`🏁 Task #${i + 1} completed`);
     } catch (err) {
-      console.error(`   ❌ Task #${i + 1} failed:`, err);
-      console.timeEnd(`⏱️ Task #${i + 1} total`);
+      logStep(`❌ Task #${i + 1} failed: ${err.message}`);
     }
-
-    console.groupEnd();
   }
 
-  console.log('🏁 All tasks complete');
+  logStep("🏁 All tasks complete");
+  window.runnerCompleted = true;
 
   // ✅ Final run-completion log
   try {
-    const origin = location.origin;
-    const message = "✅ All tasks completed";
-    if (typeof window.storeLastRun === "function") {
-      await window.storeLastRun(origin, message);
-    } else {
-      chrome.runtime.sendMessage({ command: "STORE_LAST_RUN", url: origin, message });
-    }
+    chrome.runtime.sendMessage({
+      command: "STORE_LAST_RUN",
+      url: location.origin,
+      message: "✅ All tasks completed"
+    });
   } catch (err) {
-    console.error("⚠️ Logging error in runner.js:", err);
+    logStep(`⚠️ Logging error in runner.js: ${err.message}`);
   }
-
 })();

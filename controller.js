@@ -3,19 +3,24 @@ let autoMode = false;
 const AUTO_CHECK_INTERVAL = 30 * 1000;
 let activeTabId = null;
 
-function storeLastRun(url, logText = "✅ Auto run completed") {
+function logSiteStep(url, message) {
   const now = Date.now();
   const timestamp = new Date(now).toLocaleTimeString();
   const origin = new URL(url).origin;
   const logKey = `${origin}_lastLog`;
-  const entry = `[${timestamp}] ${logText}`;
+  const newEntry = `[${timestamp}] ${message}`;
 
-  chrome.storage.local.set({ [url]: now });
   chrome.storage.local.get(logKey, data => {
     const previous = data[logKey] || "";
-    const updated = `${previous}\n${entry}`.trim();
+    const updated = `${previous}\n${newEntry}`.trim();
     chrome.storage.local.set({ [logKey]: updated });
   });
+}
+
+function storeLastRun(url, logText = "✅ Auto run completed") {
+  const now = Date.now();
+  chrome.storage.local.set({ [url]: now });
+  logSiteStep(url, logText);
 }
 
 function logDebug(message) {
@@ -42,10 +47,14 @@ function filterReadySites(siteList) {
 }
 
 function injectScripts(tabId, siteConfig) {
+  // Guarantee config injection before runner loads
   chrome.scripting.executeScript({
     target: { tabId },
     world: 'MAIN',
-    func: config => { window._siteConfig = config; },
+    func: (config) => {
+      window._siteConfig = config;
+      console.log("📦 Config set in window._siteConfig:", config);
+    },
     args: [siteConfig]
   }, () => {
     const loginSel = siteConfig.loginRequiredSelector;
@@ -57,7 +66,7 @@ function injectScripts(tabId, siteConfig) {
         args: [loginSel]
       }, ([{ result: isLoggedOut }]) => {
         if (isLoggedOut) {
-          console.log("🔐 Login required → injecting auth.js");
+          logSiteStep(siteConfig.url, "🔐 Login required, injecting auth.js");
           chrome.scripting.executeScript({
             target: { tabId },
             world: 'MAIN',
@@ -71,7 +80,7 @@ function injectScripts(tabId, siteConfig) {
               }, ([res]) => {
                 if (res?.result) {
                   clearInterval(iv);
-                  console.log("✅ Login complete → injecting runner + relay");
+                  logSiteStep(siteConfig.url, "✅ Login complete, injecting runner + relay");
                   chrome.scripting.executeScript({
                     target: { tabId },
                     world: 'MAIN',
@@ -82,7 +91,7 @@ function injectScripts(tabId, siteConfig) {
             }, 500);
           });
         } else {
-          console.log("🔓 Login selector not found → injecting runner + relay");
+          logSiteStep(siteConfig.url, "🔓 Already logged in, injecting runner + relay");
           chrome.scripting.executeScript({
             target: { tabId },
             world: 'MAIN',
@@ -91,7 +100,7 @@ function injectScripts(tabId, siteConfig) {
         }
       });
     } else {
-      console.log("🔓 No login selector configured → injecting runner + relay");
+      logSiteStep(siteConfig.url, "🔓 No login selector configured, injecting runner + relay");
       chrome.scripting.executeScript({
         target: { tabId },
         world: 'MAIN',
@@ -103,13 +112,18 @@ function injectScripts(tabId, siteConfig) {
 
 function runSite(site) {
   fetch(chrome.runtime.getURL("siteConfigs/" + site.config))
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
     .then(siteConfig => {
+      siteConfig.url = site.url;
       const launch = () => {
         chrome.tabs.update(activeTabId, { url: site.url }, tab => {
           setTimeout(() => {
+            logSiteStep(site.url, "▶ Navigated to site");
             injectScripts(tab.id, siteConfig);
-            storeLastRun(site.url, "✅ Manual or Auto run started");
+            storeLastRun(site.url, "▶ Run started");
           }, 5000);
         });
       };
@@ -118,15 +132,19 @@ function runSite(site) {
         chrome.tabs.create({ url: site.url, active: true }, tab => {
           activeTabId = tab.id;
           setTimeout(() => {
+            logSiteStep(site.url, "▶ Opened site in new tab");
             injectScripts(tab.id, siteConfig);
-            storeLastRun(site.url, "✅ Manual or Auto run started");
+            storeLastRun(site.url, "▶ Run started");
           }, 5000);
         });
       } else {
         launch();
       }
     })
-    .catch(err => console.error("❌ Failed to load site config:", err));
+    .catch(err => {
+      logSiteStep(site.url, `❌ Config load error: ${err.message}`);
+      console.error("❌ Failed to load site config:", err);
+    });
 }
 
 function processNextSite() {
@@ -136,7 +154,7 @@ function processNextSite() {
   }
   const site = sites.shift();
   if (!site || !site.url || !site.config) {
-    console.error("❌ Invalid site config skipped:", site);
+    logSiteStep(site?.url || "unknown", "❌ Invalid site config skipped");
     processNextSite();
     return;
   }
@@ -167,34 +185,29 @@ function runDueSitesFromSchedule() {
   });
 }
 
-// Handle tab closure (optional but safe)
+// Handle tab closure
 chrome.tabs.onRemoved.addListener((tabId) => {
   if (tabId === activeTabId) {
     activeTabId = null;
   }
 });
 
-// Start background interval (still useful while service worker is active)
+// Interval (while service worker is active)
 setInterval(runDueSitesFromSchedule, AUTO_CHECK_INTERVAL);
-console.log("⏱ Auto scheduler started.");
 
-// ---- New: Reliable scheduling with chrome.alarms ----
-
-// Create a repeating alarm every 30 minutes when installed/updated
+// Alarm-based scheduling
 chrome.runtime.onInstalled.addListener(() => {
   chrome.alarms.create("autoRunnerAlarm", { periodInMinutes: 30 });
   console.log("⏰ Auto Runner alarm created (every 30 minutes)");
 });
 
-// Listen for alarm events and run schedule
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === "autoRunnerAlarm") {
-    console.log("⏰ Alarm fired, running due sites check");
     runDueSitesFromSchedule();
   }
 });
 
-// Initial site list load
+// Initial site list
 fetch(chrome.runtime.getURL("sites.json"))
   .then(res => res.json())
   .then(data => {
@@ -213,7 +226,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
     chrome.storage.local.set({ autoRunEnabled: true }, () => {
       filterReadySites(sites).then(readySites => {
         if (!Array.isArray(readySites) || readySites.length === 0) {
-          console.warn("❌ No ready sites to run.");
+          logSiteStep("global", "❌ No ready sites to run.");
           return;
         }
         sites = readySites;
@@ -232,6 +245,10 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg.command === "RUN_SITE") {
     const site = sites.find(s => s.url === msg.url);
     if (site) runSite(site);
-    else console.warn("⚠️ Site not found in list:", msg.url);
+    else logSiteStep(msg.url, "⚠️ Site not found in list");
+  }
+
+  if (msg.command === "LOG_STEP" && msg.url && msg.message) {
+    logSiteStep(msg.url, msg.message);
   }
 });
