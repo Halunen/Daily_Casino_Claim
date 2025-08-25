@@ -56,6 +56,21 @@
       max-height: 200px;
       overflow-y: auto;
     }
+
+    /* Style for Auto Mode status dot */
+    #autoStatusContainer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #autoStatusDot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-left: 10px;
+      background-color: red; /* default OFF */
+    }
   </style>
 </head>
 <body>
@@ -68,8 +83,9 @@
     <button id="testLogger">🧪 Test Log Entry</button>
   </div>
 
-  <div class="section">
+  <div class="section" id="autoStatusContainer">
     <button id="toggleAuto">⏳ Loading...</button>
+    <div id="autoStatusDot" title="Auto Mode is OFF"></div>
   </div>
 
   <div class="section">

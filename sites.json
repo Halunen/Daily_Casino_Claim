@@ -25,21 +25,6 @@
     "intervalMinutes": 1440
   },
   {
-    "url": "https://luckyhands.com",
-    "config": "luckyhands.json",
-    "intervalMinutes": 1440
-  },
-  {
-    "url": "https://spinblitz.com",
-    "config": "spinblitz.json",
-    "intervalMinutes": 1440
-  },
-  {
-    "url": "https://playfame.com/login",
-    "config": "playfame.json",
-    "intervalMinutes": 1440
-  },
-  {
     "url": "https://app.icasino.com",
     "config": "icasino.json",
     "intervalMinutes": 1440
@@ -50,17 +35,17 @@
     "intervalMinutes": 1440
   },
   {
-    "url": "https://luckyhands.com/",
-    "config": "Luckyhands.json",
-    "intervalMinutes": 1440
-  },
-  {
     "url": "https://luckybird.io/",
     "config": "Luckybird.json",
     "intervalMinutes": 1440
   },
   {
-    "url": "https://myprize.us/",
+    "url": "https://myprize.us/login",
+    "config": "Myprize.json",
+    "intervalMinutes": 1440
+  },
+  {
+    "url": "https://myprize.us/login",
     "config": "Myprize.json",
     "intervalMinutes": 1440
   },

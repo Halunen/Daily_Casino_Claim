@@ -174,9 +174,25 @@ chrome.tabs.onRemoved.addListener((tabId) => {
   }
 });
 
-// Start background interval
+// Start background interval (still useful while service worker is active)
 setInterval(runDueSitesFromSchedule, AUTO_CHECK_INTERVAL);
 console.log("⏱ Auto scheduler started.");
+
+// ---- New: Reliable scheduling with chrome.alarms ----
+
+// Create a repeating alarm every 30 minutes when installed/updated
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.alarms.create("autoRunnerAlarm", { periodInMinutes: 30 });
+  console.log("⏰ Auto Runner alarm created (every 30 minutes)");
+});
+
+// Listen for alarm events and run schedule
+chrome.alarms.onAlarm.addListener((alarm) => {
+  if (alarm.name === "autoRunnerAlarm") {
+    console.log("⏰ Alarm fired, running due sites check");
+    runDueSitesFromSchedule();
+  }
+});
 
 // Initial site list load
 fetch(chrome.runtime.getURL("sites.json"))
@@ -190,10 +206,6 @@ fetch(chrome.runtime.getURL("sites.json"))
     console.log("📦 Site list loaded, waiting for user or auto scheduler...");
   })
   .catch(err => console.error("❌ Failed to load sites.json:", err));
-
-chrome.runtime.onInstalled.addListener(() => {
-  console.log("🔁 Extension installed or updated.");
-});
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg.command === "START_AUTO") {

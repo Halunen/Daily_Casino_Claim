@@ -1,0 +1,29 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "xhMSp!1EBXOvUI",
+  "loginRequiredSelector": "button.myprize-secondary-btn",
+  "login": {
+    "buttonSelector": "button.myprize-secondary-btn",
+    "usernameSelector": "input#email[name=\"email\"]",
+    "passwordSelector": "input#password[name=\"password\"]",
+    "submitSelector": "button#login-submit"
+  },
+  "tasks": [
+    {
+      "selector": "a.link-v2[href='/bonuses']",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "button.myprize-primary-button-v2",
+      "clickType": "click",
+      "delay": 5000
+    },
+   {
+      "selector": "button.myprize-primary-button-v2",
+      "clickType": "click",
+      "delay": 5000
+    }
+  ]
+}

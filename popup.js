@@ -1,5 +1,17 @@
 let sites = [];
 
+function updateAutoStatusDot(enabled) {
+  const dot = document.getElementById("autoStatusDot");
+  if (!dot) return;
+  dot.style.width = "12px";
+  dot.style.height = "12px";
+  dot.style.borderRadius = "50%";
+  dot.style.display = "inline-block";
+  dot.style.marginLeft = "8px";
+  dot.style.backgroundColor = enabled ? "green" : "red";
+  dot.title = enabled ? "Auto Mode is ACTIVE" : "Auto Mode is OFF";
+}
+
 function loadSites() {
   fetch(chrome.runtime.getURL("sites.json"))
     .then(res => {
@@ -80,9 +92,17 @@ document.getElementById("toggleAuto").addEventListener("click", () => {
     const newState = !enabled;
 
     chrome.storage.local.set({ autoRunEnabled: newState }, () => {
+      if (newState) {
+        chrome.runtime.sendMessage({ command: "START_AUTO" });
+      } else {
+        chrome.runtime.sendMessage({ command: "STOP_AUTO" });
+      }
+
       document.getElementById("toggleAuto").textContent = newState
         ? "⏹ Stop Auto Mode"
         : "▶ Start Auto Mode";
+
+      updateAutoStatusDot(newState);
     });
   });
 });
@@ -92,6 +112,7 @@ chrome.storage.local.get("autoRunEnabled", (data) => {
   document.getElementById("toggleAuto").textContent = enabled
     ? "⏹ Stop Auto Mode"
     : "▶ Start Auto Mode";
+  updateAutoStatusDot(enabled);
 });
 
 document.getElementById("downloadLog").addEventListener("click", () => {
