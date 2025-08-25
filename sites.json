@@ -75,11 +75,6 @@
     "intervalMinutes": 1440
   },
   {
-    "url": "https://www.stackrcasino.com/lobby",
-    "config": "Stackrwheel.json",
-    "intervalMinutes": 1440
-  },
-  {
     "url": "https://www.theboss.casino/",
     "config": "Bosscasino.json",
     "intervalMinutes": 1440
@@ -117,11 +112,6 @@
   {
     "url": "https://www.megabonanza.com/",
     "config": "Megabonanza.json",
-    "intervalMinutes": 1440
-  },
-  {
-    "url": "https://www.hellomillions.com/",
-    "config": "Hellomillions.json",
     "intervalMinutes": 1440
   },
   {

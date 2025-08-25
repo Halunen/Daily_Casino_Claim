@@ -1,7 +1,7 @@
 {
   "intervalMinutes": 1440,
-  "username": "cscigliano39@gmail.com",
-  "password": "Rainforest813!",
+  "username": "casinunen@gmail.com",
+  "password": "0KDyhDAj#PE7fK9$",
   "loginRequiredSelector": "#root > div.app-container > div > div > div > div.MuiGrid-root.jss1.css-rfnosa > div.MuiGrid-root.jss10.css-rfnosa > div > div.MuiGrid-root.auth-btn-wrap.css-rfnosa > button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.jss13.css-r4j8of > div",
   "login": {
     "buttonSelector": "#root > div.app-container > div > div > div > div.MuiGrid-root.jss1.css-rfnosa > div.MuiGrid-root.jss10.css-rfnosa > div > div.MuiGrid-root.auth-btn-wrap.css-rfnosa > button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.jss13.css-r4j8of > div",
