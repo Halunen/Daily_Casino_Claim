@@ -2,11 +2,16 @@
   console.log("🛠️ Task runner injected");
 
   function logStep(msg) {
-    chrome.runtime.sendMessage({
-      command: "LOG_STEP",
-      url: location.origin,
-      message: msg
-    });
+    console.log(msg); // 👈 echo to console
+    try {
+      chrome.runtime.sendMessage({
+        command: "LOG_STEP",
+        url: location.origin,
+        message: msg
+      });
+    } catch (err) {
+      console.warn("⚠️ Failed to send LOG_STEP:", err, msg);
+    }
   }
 
   const delay = ms => new Promise(r => setTimeout(r, ms));
@@ -16,14 +21,14 @@
       logStep("❌ simulateClick called with null element");
       return;
     }
-    el.scrollIntoView({ block: 'center', inline: 'center' });
-    const overlay = document.querySelector('.page-overlay');
-    if (overlay) overlay.style.pointerEvents = 'none';
+    el.scrollIntoView({ block: "center", inline: "center" });
+    const overlay = document.querySelector(".page-overlay");
+    if (overlay) overlay.style.pointerEvents = "none";
 
-    ['pointerover','pointermove','pointerdown','pointerup','pointerout']
+    ["pointerover","pointermove","pointerdown","pointerup","pointerout"]
       .forEach(type => el.dispatchEvent(new PointerEvent(type, { bubbles: true, cancelable: true, composed: true })));
 
-    ['mouseover','mousemove','mousedown','mouseup','click']
+    ["mouseover","mousemove","mousedown","mouseup","click"]
       .forEach(type => el.dispatchEvent(new MouseEvent(type, { bubbles: true, cancelable: true, composed: true })));
 
     logStep("✅ Simulated click executed");
@@ -97,16 +102,20 @@
       textMatch, runIfSelector, runIfNotSelector
     } = task;
 
+    console.group(`▶️ Task #${i + 1}`);
+
     if (runIfSelector && !document.querySelector(runIfSelector)) {
       logStep(`🔷 Skipping task #${i + 1}: missing runIfSelector`);
+      console.groupEnd();
       continue;
     }
     if (runIfNotSelector && document.querySelector(runIfNotSelector)) {
       logStep(`🔷 Skipping task #${i + 1}: runIfNotSelector present`);
+      console.groupEnd();
       continue;
     }
 
-    logStep(`🔍 Task #${i + 1} started (selector="${selector}", clickType="${clickType || 'default'}")`);
+    logStep(`🔍 Task #${i + 1} started (selector="${selector}", clickType="${clickType || "default"}")`);
 
     try {
       const el = await new Promise((resolve, reject) => {
@@ -144,9 +153,15 @@
             break;
           case "keyboard":
             el.focus();
-            el.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true, composed: true }));
-            el.dispatchEvent(new KeyboardEvent("keyup", { key: "Enter", bubbles: true, composed: true }));
+            el.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", code: "Enter", keyCode: 13, which: 13, bubbles: true, composed: true }));
+            el.dispatchEvent(new KeyboardEvent("keyup", { key: "Enter", code: "Enter", keyCode: 13, which: 13, bubbles: true, composed: true }));
             logStep("✅ Enter key simulated");
+            break;
+          case "spacebar":
+            el.focus();
+            el.dispatchEvent(new KeyboardEvent("keydown", { key: " ", code: "Space", keyCode: 32, which: 32, bubbles: true, composed: true }));
+            el.dispatchEvent(new KeyboardEvent("keyup", { key: " ", code: "Space", keyCode: 32, which: 32, bubbles: true, composed: true }));
+            logStep("✅ Spacebar key simulated");
             break;
           case "canvasCenter": {
             const rect = el.getBoundingClientRect();
@@ -176,6 +191,8 @@
     } catch (err) {
       logStep(`❌ Task #${i + 1} failed: ${err.message}`);
     }
+
+    console.groupEnd();
   }
 
   logStep("🏁 All tasks complete");

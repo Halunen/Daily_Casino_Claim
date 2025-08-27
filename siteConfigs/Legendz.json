@@ -11,7 +11,7 @@
   },
   
   "tasks": [
-	{
+   {
       "selector": "body",
       "delay": 15000
     },
@@ -20,18 +20,24 @@
       "clickType": "click",
       "delay": 5000
     },
-	{
+    {
       "selector": "div.css-ocuku9.e2vs66t0 > button.css-ph7ilm.e1cnah1t0",
       "clickType": "click",
       "delay": 5000
     },
-	{
+    {
       "selector": "#Layer_1-spin > g:nth-child(4) > circle.interactive",
-      "clickType": "simulate",
+      "clickType": "click",
       "delay": 10000
     },
-	{
+    {
+      "selector": ".button.spinButtonLocateHelper .content.main svg#Layer_1-spin circle.interactive",
+      "clickType": "spacebar",
+      "delay": 10000
+    },
+    {
       "selector": "body",
+      "clickType": "spacebar",
       "delay": 5000
     }
   ]

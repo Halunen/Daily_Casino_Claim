@@ -14,7 +14,7 @@
     passwordSelector,
     submitSelector,
     delays = {},
-    solveCaptcha = true   // 👈 new: toggle (default true)
+    solveCaptcha = false   // 👈 new: toggle (default false)
   } = config.login;
 
   const ANTICAPTCHA_KEY = "8c0ef38af3bcd57d3bb8fc8f37137586";
