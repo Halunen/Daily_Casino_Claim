@@ -2,27 +2,30 @@
   "intervalMinutes": 1440,
   "username": "casinunen@gmail.com",
   "password": "4X7rgp2BZaxEo94BqMgV",
-  "loginRequiredSelector": "button.px-3.py-2.text-sm.font-medium.text-white.hover\\:text-primary.transition-colors",
+  "loginRequiredSelector": "button[aria-label='Sign in to your account']",
   "login": {
-    "buttonSelector": "button.px-3.py-2.text-sm.font-medium.text-white.hover\\:text-primary.transition-colors",
-    "usernameSelector": "input[type=\"email\"]",
-    "passwordSelector": "input[type=\"password\"]",
-    "submitSelector": "button[type=\"submit\"]"
+    "buttonSelector": "button[aria-label='Sign in to your account']",
+    "usernameSelector": "input[type='email']",
+    "passwordSelector": "input[type='password']",
+    "submitSelector": "button[type='submit']",
+    "solveCaptcha": false,
+    "delays": {
+      "afterClick": 3000,
+      "afterUsername": 500,
+      "afterPassword": 2000
+    }
   },
-  
   "tasks": [
-	{
+    {
       "selector": "body",
-      "delay": 15000
+      "delay" : 5000
     },
     {
       "selector": "div.relative.w-full.h-40.bg-gradient-to-br.from-black\\/40.to-black\\/60.rounded-2xl.border-2.border-primary\\/30.overflow-hidden.cursor-pointer.hover\\:border-primary\\/50",
-      "clickType": "click",
-      "delay": 5000
+      "clickType": "click"
     },
-	{
-      "selector": "body",
-      "delay": 15000
+    {
+      "selector": "body"
     }
   ]
 }
