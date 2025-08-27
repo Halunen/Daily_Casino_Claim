@@ -145,6 +145,11 @@
     "intervalMinutes": 1440
   },
   {
+    "url": "https://nolimitcoins.com/lobby/#/",
+    "config": "nolimitcoinsdaily.json",
+    "intervalMinutes": 1440
+  },
+  {
     "url": "https://www.legendz.com/en-US/",
     "config": "Legendz.json",
     "intervalMinutes": 1440

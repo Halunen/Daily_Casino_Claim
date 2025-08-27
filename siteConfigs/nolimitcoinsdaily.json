@@ -28,6 +28,11 @@
       "delay": 2000
     },
     {
+      "selector": "button.a-button.primary.size-lg.wide",
+      "clickType": "click",
+      "delay": 8000
+    },
+    {
       "selector": "body",
       "delay": 8000
     }
