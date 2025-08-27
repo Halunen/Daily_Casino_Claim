@@ -2,7 +2,7 @@
   "intervalMinutes": 1440,
   "username": "casinunen@gmail.com",
   "password": "xhMSp!1EBXOvUI",
-  "loginRequiredSelector": "button.myprize-secondary-btn",
+  "loginRequiredSelector": "gragas",
   "login": {
     "buttonSelector": "button.myprize-secondary-btn",
     "usernameSelector": "input#email[name=\"email\"]",
@@ -11,23 +11,12 @@
   },
   "tasks": [
     {
-      "selector": "button.bonuses-btn",
+      "selector": "body",
       "clickType": "click",
-      "delay": 5000
+      "delay": 7000
     },
     {
-      "selector": "button.myprize-primary-button-v2",
-      "textMatch" : "Claim Reward",
-      "clickType": "click",
-      "delay": 5000
-    },
-    {
-      "selector": "img[alt='Day Reward']",
-      "clickType": "click",
-      "delay": 5000
-    },
-    {
-      "selector": "button.myprize-primary-button-v2",
+      "selector": "button[data-test='daily-modal']",
       "clickType": "click",
       "delay": 5000
     }

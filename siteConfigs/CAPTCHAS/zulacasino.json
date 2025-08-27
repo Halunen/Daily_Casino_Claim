@@ -1,0 +1,28 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "uAX3iTU1yI6VBZ2rHwnv",
+  "loginRequiredSelector": "button#TEST_LOADING_BUTTON",
+  "login": {
+    "buttonSelector": "button#TEST_LOADING_BUTTON",
+    "usernameSelector": "input#emailAddress.form-control[name=\"username\"]",
+    "passwordSelector": "input#password",
+    "submitSelector": "button#TEST_LOADING_BUTTON.loginFormButton.loadingBtn.btn.btn-secondary"
+  },
+  "tasks": [
+    {
+      "selector": "body",
+      "delay": 5000
+    },
+    {
+      "selector": "button.buttonBuy.btn.btn-secondary",
+      "clickType": "click",
+      "delay": 0
+    },
+    {
+      "selector": "button#TEST_LOADING_BUTTON.collectButtton.loadingBtn.btn.btn-secondary",
+      "clickType": "click",
+      "delay": 0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "intervalMinutes": 1440,
+  "username": "Halusino",
+  "password": "bpYqtgkimVmQtkQkPs9G",
+  "loginRequiredSelector": "a[href='/login']",
+  "login": {
+    "buttonSelector": "a[href='/login']",
+    "usernameSelector": "#email",
+    "passwordSelector": "#password",
+    "submitSelector": "button[type='submit'] span"
+  },
+  "tasks": [
+    {
+      "selector": "img[alt='popup offer']",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "div.text-xs.font-normal",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "button.bg-green-600.mt-4",
+      "clickType": "click",
+      "delay": 5000
+    }
+  ]
+}

@@ -2,14 +2,19 @@
   "intervalMinutes": 1440,
   "username": "casinunen@gmail.com",
   "password": "Hl48slWJB1bzYscqEsEH",
-  "loginRequiredSelector": "button[type=\"button\"].text-xs",
+  "loginRequiredSelector": "a[href='/signin']",
   "login": {
-    "buttonSelector": "button[type=\"button\"].text-xs",
+    "buttonSelector": "a[href='/signin']",
     "usernameSelector": "input#email[name=\"email\"]",
     "passwordSelector": "input#password[name=\"password\"]",
     "submitSelector": "button[type=\"submit\"]"
   },
   "tasks": [
+    {
+      "selector": "button.close-btn-c",
+      "clickType": "click",
+      "delay": 7000
+    },
     {
       "selector": "div.w-full.h-10.sm\\:h-11.flex.flex-col.items-center.justify-center.gap-0.rounded-full.transition-transform.duration-300.font-roboto.font-bold.tracking-wider.px-2.daily-bonus-container.text-secondary-3.text-sm.sm\\:text-base.md\\:text-lg.lg\\:text-base.xl\\:text-lg.\\!cursor-pointer",
       "clickType": "click",
