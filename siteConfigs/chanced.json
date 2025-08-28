@@ -1,0 +1,41 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "rUv2i0uievRCuqNDF1sH",
+  "loginRequiredSelector": "button.header-btn.btn-login",
+  "login": {
+    "buttonSelector": "button.header-btn.btn-login",
+    "usernameSelector": "input.input-with-icon",
+    "passwordSelector": "#password",
+    "submitSelector": "button[type='submit']"
+  },
+  "tasks": [
+    {
+      "selector": "body",
+      "delay": 10000
+    },
+    {
+      "selector": "button.btn-primary.items-center.gap-2 > span",
+      "delay": 1000
+    },
+    {
+      "selector": "button.text-base-muted-foreground.w-full",
+      "textMatch" : "Daily Bonus",
+      "delay": 3000
+    },
+    {
+      "selector": "button.btn-bet.rounded-2xl",
+      "textMatch" : "Claim Daily Bonus",
+      "delay": 4000
+    },
+    {
+      "selector": "button.swal2-confirm.swal2-styled",
+      "textMatch" : "Yes",
+      "delay": 4000
+    },
+    {
+      "selector": "body",
+      "delay": 8000
+    }
+  ]
+}

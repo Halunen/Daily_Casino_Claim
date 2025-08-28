@@ -215,6 +215,11 @@
     "intervalMinutes": 1440
   },
   {
+    "url": "https://www.chanced.com/",
+    "config": "chanced.json",
+    "intervalMinutes": 1440
+  },
+  {
     "url": "https://www.zulacasino.com/",
     "config": "zulacasino.json",
     "intervalMinutes": 1440
