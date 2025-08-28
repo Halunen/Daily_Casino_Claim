@@ -1,0 +1,42 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "5mEFw533rgEipOpROG2Q",
+  "loginRequiredSelector": "GRAGAS",
+  "login": {
+    "buttonSelector": "button.btn-login",
+    "usernameSelector": "input[formcontrolname='email']",
+    "passwordSelector": "input[name='password']",
+    "submitSelector": "button[data-testid='login_submit-button']",
+    "delays": {
+      "afterClick": 4000,
+      "afterUsername": 500,
+      "afterPassword": 3000
+    }
+  },
+  "tasks": [
+    {
+      "selector": "button.btn-primary",
+      "action": "click",
+      "timeout": 5000
+    },
+    {
+      "selector": "button.btn",
+      "textMatch" : "Reedem",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "#daily-bonus-tab",
+      "action": "click",
+      "textMatch": "Daily Bonus",
+      "timeout": 5000
+    },
+    {
+      "selector": "button.btn-red",
+      "action": "click",
+      "textMatch": "Claim",
+      "timeout": 5000
+     }
+  ]
+}
