@@ -1,0 +1,25 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "5mEFw533rgEipOpROG2Q",
+  "loginRequiredSelector": "input[name='email']",
+  "login": {
+    "buttonSelector": "input[name='email']",
+    "usernameSelector": "input[name='email']",
+    "passwordSelector": "input[name='password']",
+    "submitSelector": "button[data-testid='login_submit-button']"
+  },
+  "tasks": [
+    {
+      "selector": "body",
+      "clickType": "click",
+      "delay": 7000
+    },
+    {
+      "selector": "button.hud__primary-buy-toggle",
+      "textMatch" : "GET COINS",
+      "clickType": "click",
+      "delay": 5000
+    }
+  ]
+}

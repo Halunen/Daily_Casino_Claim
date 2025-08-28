@@ -1,0 +1,32 @@
+{
+  "loginType": "none",
+  "username": "casinunen@gmail.com",
+  "password": "TL9UBE97W1izZHLjIA9A",
+  "login": {
+    "buttonSelector": "button.loginBtnHead.ant-btn",
+    "usernameSelector": "input.ant-input.ant-input-lg",
+    "passwordSelector": "input.ant-input.ant-input-lg[placeholder='Enter your password']",
+    "submitSelector": "button.ant-btn.ant-btn-primary.btn"
+  },
+  "tasks": [
+    {
+      "selector": "button.bgGradientBtnHoverBtn.animationBtn",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "div.flex-bc.md\\:gap-4.xss\\:gap-1.sm\\:gap-1.rewardBg6.aspect-\\[386\\/60\\].px-3.max-w-full",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "div.reelsOnItem",
+      "clickType": "click",
+      "delay": 5000
+    },
+    {
+      "selector": "body",
+      "delay": 5000
+    }
+  ]
+}

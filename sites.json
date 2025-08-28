@@ -215,6 +215,11 @@
     "intervalMinutes": 1440
   },
   {
+    "url": "https://login.chumbacasino.com/?_ga=2.254624394.344858682.1756346428-317800238.1747842490&_gac=1.225578600.1753066307.CjwKCAjwp_LDBhBCEiwAK7FnklRgt0Q6-0Q0izTyAJlUpP2B7ol8LjRWJG9auXbdearvzmbrjCkWkBoCbUEQAvD_BwE",
+    "config": "chumbacasino.json",
+    "intervalMinutes": 1440
+  },
+  {
     "url": "https://www.chanced.com/",
     "config": "chanced.json",
     "intervalMinutes": 1440
