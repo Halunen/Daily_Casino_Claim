@@ -220,6 +220,11 @@
     "intervalMinutes": 1440
   },
   {
+    "url": "https://www.zitobox.com/",
+    "config": "zitobox.json",
+    "intervalMinutes": 1440
+  },
+  {
     "url": "https://www.zulacasino.com/",
     "config": "zulacasino.json",
     "intervalMinutes": 1440

@@ -1,0 +1,25 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "rra6740QrukRG7szEbC3",
+  "loginRequiredSelector": "gragas",
+  "login": {
+    "buttonSelector": "button.btlogin",
+    "usernameSelector": "input[name='email']",
+    "passwordSelector": "input[name='password']",
+    "submitSelector": "button#login-submit"
+  },
+  "tasks": [
+    {
+      "selector": "body",
+      "clickType": "click",
+      "delay": 7000
+    },
+    {
+      "selector": "button",
+      "textMatch" : "COLLECT DAILY BONUS",
+      "clickType": "click",
+      "delay": 5000
+    }
+  ]
+}
