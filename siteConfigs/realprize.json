@@ -1,0 +1,22 @@
+{
+  "intervalMinutes": 1440,
+  "username": "Casinunen@gmail.com",
+  "password": "J2W3aTR7dME8begFszmD",
+  "loginRequiredSelector": "a[href='#!login']",
+  "login": {
+    "buttonSelector": "a[href='#!login']",
+    "usernameSelector": "#poplogin_email",
+    "passwordSelector": "#poplogin_password",
+    "submitSelector": "#poploginbtn"
+  },
+  "tasks": [
+	{
+      "selector": "body",
+      "delay": 5000
+    },
+    {
+      "selector": "#claimnewpop",
+      "delay": 5000
+    }
+  ]
+}

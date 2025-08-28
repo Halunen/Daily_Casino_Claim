@@ -225,6 +225,11 @@
     "intervalMinutes": 1440
   },
   {
+    "url": "https://www.realprize.com/",
+    "config": "realprize.json",
+    "intervalMinutes": 1440
+  },
+  {
     "url": "https://www.funzcity.com/",
     "config": "funzcity.json",
     "intervalMinutes": 1440
