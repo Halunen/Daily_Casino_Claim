@@ -26,10 +26,17 @@
       "clickType": "click",
       "delay": 5000
     },
-    {
-      "selector": "button.myprize-primary-button-v2",
-      "clickType": "click",
-      "delay": 5000
-    }
+   {
+     "selector": "button.myprize-primary-button-v2",
+     "action": "click",
+     "textMatch": "Claim",
+     "timeout": 5000
+   },
+   {
+     "selector": "#spinBtn",
+     "action": "click",
+     "textMatch": "Spin",
+     "timeout": 5000
+   }
   ]
 }
