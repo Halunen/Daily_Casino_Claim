@@ -7,10 +7,13 @@
     "buttonSelector": "button.btn.btn-secondary",
     "usernameSelector": "input#email[formcontrolname=\"email\"]",
     "passwordSelector": "input#password[formcontrolname=\"password\"]",
-    "submitSelector": "button.btn.btn-primary.btn-login[type='submit']",
-    "clickType": "simulate"	
+    "submitSelector": "button.btn.btn-primary.btn-login[type='submit']"
   },
   "tasks": [
+    {
+      "selector": "body",
+      "delay": 8000
+    },
     {
       "selector": "button.btn.btn-primary span.hide-nav",
       "clickType": "click",
@@ -22,7 +25,8 @@
       "delay": 3000
     },
     {
-      "selector": "button.btn.btn-red",
+      "selector": "button.btn.buy-btn-coin",
+      "textMatch" : "Claim",
       "clickType": "click",
       "delay": 3000
     },

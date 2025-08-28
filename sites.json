@@ -150,6 +150,11 @@
     "intervalMinutes": 1440
   },
   {
+    "url": "https://www.rollingriches.com/",
+    "config": "rollingriches.json",
+    "intervalMinutes": 1440
+  },
+  {
     "url": "https://www.legendz.com/en-US/",
     "config": "Legendz.json",
     "intervalMinutes": 1440
