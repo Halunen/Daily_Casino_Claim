@@ -1,0 +1,32 @@
+{
+  "intervalMinutes": 1440,
+  "username": "",
+  "password": "",
+  "loginRequiredSelector": "GRAGAS",
+  "login": {
+    "buttonSelector": "",
+    "usernameSelector": "",
+    "passwordSelector": "",
+    "submitSelector": ""
+  },
+  "tasks": [
+   {
+      "selector": "span.fs.semibold.uppercase.title",
+      "action": "click",
+      "textMatch": "promo",
+      "timeout": 5000
+    },
+    {
+      "selector": "button.a-button.primary.size-s",
+      "action": "click",
+      "textMatch": "Get",
+      "timeout": 5000
+    },
+    {
+      "selector": "button.main-button",
+      "action": "click",
+      "textMatch": "COLLECT",
+      "timeout": 5000 
+    }
+  ]
+}

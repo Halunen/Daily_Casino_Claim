@@ -210,6 +210,11 @@
     "intervalMinutes": 1440
   },
   {
+    "url": "https://taofortune.com/",
+    "config": "taofortune.json",
+    "intervalMinutes": 1440
+  },
+  {
     "url": "https://jefebet.com/",
     "config": "jefebet.json",
     "intervalMinutes": 1440
