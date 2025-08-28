@@ -1,0 +1,26 @@
+{
+  "intervalMinutes": 1440,
+  "username": "",
+  "password": "",
+  "loginRequiredSelector": "GRAGAS",
+  "login": {
+    "buttonSelector": "",
+    "usernameSelector": "",
+    "passwordSelector": "",
+    "submitSelector": ""
+  },
+  "tasks": [
+   {
+      "selector": "button.a-button.primary.size-lg.btn",
+      "action": "click",
+      "textMatch": "Claim Reward",
+      "timeout": 5000
+    },
+    {
+      "selector": "button.action-btn",
+      "action": "click",
+      "textMatch": "Collect Today’s Reward",
+      "timeout": 5000
+    }
+  ]
+}
