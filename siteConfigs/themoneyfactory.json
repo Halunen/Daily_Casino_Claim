@@ -1,0 +1,39 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "LJRI2i3Zldfl3dI9af!",
+  "loginRequiredSelector": "button.MuiButton-root[type='button']",
+  "login": {
+    "buttonSelector": "button.MuiButton-root[type='button']",
+    "usernameSelector": "input[name='email']",
+    "passwordSelector": "input[name='password']",
+    "submitSelector": "button[type='submit']"
+  },
+  "tasks": [
+    {
+      "selector": "body",
+      "delay": 10000
+    },
+    {
+      "selector": "svg path[d*='M10.0303 8.96965']",
+      "delay": 1000
+    },
+    {
+      "selector": ".icon-button.ghost.menu-btn",
+      "delay": 1000
+    },
+    {
+      "selector": "button.a-button.default.nav-button.daily",
+      "delay": 4000
+    },
+    {
+      "selector": "button.btn.btn-secondary[type='button']",
+      "clickType": "click",
+      "delay": 3000
+    },
+    {
+      "selector": "body",
+      "delay": 8000
+    }
+  ]
+}
