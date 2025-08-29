@@ -5,7 +5,7 @@
   "loginRequiredSelector": "button.MuiButton-root[type='button']",
   "login": {
     "buttonSelector": "button.MuiButton-root[type='button']",
-    "usernameSelector": "input[name='email']",
+    "usernameSelector": "input[id='Email Address']",
     "passwordSelector": "input[name='password']",
     "submitSelector": "button[type='submit']"
   },

@@ -23,7 +23,7 @@
 	{
       "selector": "canvas[width='1000'][height='1000']",
       "clickType": "canvasCenter",
-      "delay": 5000
+      "delay": 10000
     },
 	{
       "selector": "body",

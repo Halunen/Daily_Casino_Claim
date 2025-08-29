@@ -11,9 +11,23 @@
   },
   
   "tasks": [
-	{
+    {
       "selector": "body",
       "delay": 15000
+    },
+    {
+      "selector": "#responsive-navbar-nav > div > div > a:nth-child(6)",
+      "clickType": "click",
+      "delay": 10000
+    },
+	{
+      "selector": "button.claim-btn.btn.btn-primary",
+      "clickType": "click",
+      "delay": 5000
+    },
+	{
+      "selector": "body",
+      "delay": 5000
     }
   ]
 }

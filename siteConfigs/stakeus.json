@@ -19,7 +19,7 @@
       "delay": 3000
     },
     {
-      "selector": "button[data-testid='password-reset-button']",
+      "selector": "div.content form button",
       "delay": 3000
     },
     {

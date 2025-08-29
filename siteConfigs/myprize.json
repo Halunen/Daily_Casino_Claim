@@ -16,7 +16,7 @@
       "delay": 5000
     },
     {
-      "selector": "button.myprize-primary-button-v2",
+      "selector": "button",
       "textMatch" : "Claim Reward",
       "clickType": "click",
       "delay": 5000
