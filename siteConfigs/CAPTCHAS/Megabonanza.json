@@ -1,7 +1,7 @@
 {
   "intervalMinutes": 1440,
-  "username": "cscigliano39@gmail.com",
-  "password": "Rainforest813!",
+  "username": "casinunen@gmail.com",
+  "password": "utFtQG9r8nrP1FMC5UtV",
   "loginRequiredSelector": "a.mt-button-base-root.mt-button-outlined.styles_root__rijy_.styles_loginLink__QnUXk[data-test='header-login-btn'][href='/login']",
   "login": {
     "buttonSelector": "a.mt-button-base-root.mt-button-outlined.styles_root__rijy_.styles_loginLink__QnUXk[data-test='header-login-btn'][href='/login']",

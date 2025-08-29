@@ -1,0 +1,65 @@
+{
+  "intervalMinutes": 1440,
+  "username": "casinunen@gmail.com",
+  "password": "exaBxg9lxUK8liHYaoRI",
+  "loginRequiredSelector": "GRAGAS",
+  "login": {
+    "buttonSelector": "",
+    "usernameSelector": "input[type='email']",
+    "passwordSelector": "input[type='password']",
+    "submitSelector": "div.css-1dbjc4n.r-1awozwy.r-1loqt21.r-13awgt0.r-18u37iz.r-1777fci.r-1otgn73.r-1i6wzkk.r-lrvibr",
+  "delays": {
+     "afterClick": 3000,
+     "afterUsername": 500,
+     "afterPassword": 2000
+    }
+   },
+  "tasks": [
+  {
+    "selector": "div[style*='background-color: rgb(255, 247, 75)']",
+    "clickType": "click",
+    "delay": 5000
+  },
+  {
+    "selector": "#portal-host > div > div > div.css-1dbjc4n.r-1p0dtai.r-1d2f490.r-6dt33c.r-12vffkv.r-u8s1d.r-zchlnj.r-ipm5af > div > div > div.css-1dbjc4n.r-150rngu.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-11yh6sk.r-1rnoaur.r-1sncvnh > div > div > div.css-1dbjc4n.r-1habvwh.r-58xgd4.r-nvz6oo.r-1dzdj1l.r-rs99b7.r-1loqt21.r-15d164r.r-zso239.r-6dt33c.r-1pcd2l5.r-1otgn73.r-1i6wzkk.r-lrvibr.r-o96wvk > div:nth-child(4)",
+    "clickType": "click",
+    "delay": 5000
+  },
+  {
+    "selector": "#portal-host > div > div > div.css-1dbjc4n.r-1p0dtai.r-1d2f490.r-6dt33c.r-12vffkv.r-u8s1d.r-zchlnj.r-ipm5af > div > div > div.css-1dbjc4n.r-150rngu.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-11yh6sk.r-1rnoaur.r-1sncvnh > div > div > div:nth-child(2) > div:nth-child(4)",
+    "clickType": "click",
+    "delay": 5000
+  },
+  {
+    "selector": "#portal-host > div > div > div.css-1dbjc4n.r-1p0dtai.r-1d2f490.r-6dt33c.r-12vffkv.r-u8s1d.r-zchlnj.r-ipm5af > div > div > div.css-1dbjc4n.r-150rngu.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-11yh6sk.r-1rnoaur.r-1sncvnh > div > div > div:nth-child(3) > div:nth-child(4)",
+    "clickType": "click",
+    "delay": 5000
+  },
+  {
+    "selector": "#portal-host > div > div > div.css-1dbjc4n.r-1p0dtai.r-1d2f490.r-6dt33c.r-12vffkv.r-u8s1d.r-zchlnj.r-ipm5af > div > div > div.css-1dbjc4n.r-150rngu.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-11yh6sk.r-1rnoaur.r-1sncvnh > div > div > div:nth-child(4) > div:nth-child(4)",
+    "clickType": "click",
+    "delay": 5000
+  },
+  {
+    "selector": "#portal-host > div > div > div.css-1dbjc4n.r-1p0dtai.r-1d2f490.r-6dt33c.r-12vffkv.r-u8s1d.r-zchlnj.r-ipm5af > div > div > div.css-1dbjc4n.r-150rngu.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-11yh6sk.r-1rnoaur.r-1sncvnh > div > div > div:nth-child(5) > div:nth-child(4)",
+    "clickType": "click",
+    "delay": 5000
+  },
+  {
+    "selector": "#portal-host > div > div > div.css-1dbjc4n.r-1p0dtai.r-1d2f490.r-6dt33c.r-12vffkv.r-u8s1d.r-zchlnj.r-ipm5af > div > div > div.css-1dbjc4n.r-150rngu.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-11yh6sk.r-1rnoaur.r-1sncvnh > div > div > div:nth-child(6) > div:nth-child(4)",
+    "clickType": "click",
+    "delay": 5000
+  },
+  {
+    "selector": "#portal-host > div > div > div.css-1dbjc4n.r-1p0dtai.r-1d2f490.r-6dt33c.r-12vffkv.r-u8s1d.r-zchlnj.r-ipm5af > div > div > div.css-1dbjc4n.r-150rngu.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-11yh6sk.r-1rnoaur.r-1sncvnh > div > div > div.css-1dbjc4n.r-1awozwy.r-58xgd4.r-156wk7y.r-1dzdj1l.r-rs99b7.r-15d164r.r-zso239.r-17tb59b.r-1pcd2l5.r-1i6wzkk.r-lrvibr.r-1euk07n > div:nth-child(4)",
+    "clickType": "click",
+    "delay": 5000
+  },
+  {
+    "selector": "div.css-1dbjc4n.r-1p0dtai.r-13awgt0.r-1d2f490.r-u8s1d.r-zchlnj.r-ipm5af:nth-of-type(8)",
+    "clickType": "click",
+    "delay": 5000
+  }
+ ]
+}
+
